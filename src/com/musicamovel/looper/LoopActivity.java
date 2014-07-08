@@ -125,7 +125,7 @@ public class LoopActivity extends PApplet {
 	}
 	
 	public float[] getArrayFromPd(String array1) {
-	int sizeArray = PdBase.arraySize(array1)/3;
+	int sizeArray = PdBase.arraySize(array1);
 	//Log.i("LoopActivity", "sizeArray " + sizeArray);
 	float[] frompd = new float[sizeArray];
 	PdBase.readArray(frompd, 0, array1, 0, sizeArray);
