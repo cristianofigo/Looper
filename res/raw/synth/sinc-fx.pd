@@ -1,0 +1,111 @@
+#N canvas 653 249 604 410 10;
+#X obj 221 185 mono-delayfb /key;
+#X obj 29 184 mono-FFTreverb /key;
+#X obj 81 30 inlet~;
+#N canvas 380 220 450 300 fx 0;
+#X obj 161 22 inlet;
+#X obj 76 38 keyname;
+#X symbolatom 122 111 10 0 0 0 - - -;
+#X obj 122 163 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 142 173 5 0 0 0 - - -;
+#X obj 122 198 spigot;
+#X obj 122 225 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 122 139 select Control_L Space Control_R Delete;
+#X obj 187 166 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 207 176 5 0 0 0 - - -;
+#X obj 187 201 spigot;
+#X obj 187 228 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 252 163 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 272 173 5 0 0 0 - - -;
+#X obj 252 198 spigot;
+#X obj 252 225 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 317 166 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 337 176 5 0 0 0 - - -;
+#X obj 317 201 spigot;
+#X obj 317 228 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 122 78 spigot;
+#X obj 161 48 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 122 264 outlet;
+#X obj 187 264 outlet;
+#X obj 252 264 outlet;
+#X obj 317 264 outlet;
+#X connect 0 0 21 0;
+#X connect 1 0 4 0;
+#X connect 1 0 9 0;
+#X connect 1 0 13 0;
+#X connect 1 0 17 0;
+#X connect 1 1 20 0;
+#X connect 2 0 7 0;
+#X connect 3 0 5 0;
+#X connect 4 0 5 1;
+#X connect 5 0 6 0;
+#X connect 6 0 22 0;
+#X connect 7 0 3 0;
+#X connect 7 1 8 0;
+#X connect 7 2 12 0;
+#X connect 7 3 16 0;
+#X connect 8 0 10 0;
+#X connect 9 0 10 1;
+#X connect 10 0 11 0;
+#X connect 11 0 23 0;
+#X connect 12 0 14 0;
+#X connect 13 0 14 1;
+#X connect 14 0 15 0;
+#X connect 15 0 24 0;
+#X connect 16 0 18 0;
+#X connect 17 0 18 1;
+#X connect 18 0 19 0;
+#X connect 19 0 25 0;
+#X connect 20 0 2 0;
+#X connect 21 0 20 1;
+#X restore 306 25 pd fx switch;
+#X obj 30 152 *~;
+#X msg 83 104 1 1000;
+#X msg 143 107 0 1000;
+#X obj 120 76 sel 1;
+#X obj 137 48 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 83 132 line~;
+#X obj 222 162 *~;
+#X msg 275 114 1 1000;
+#X msg 335 117 0 1000;
+#X obj 312 86 sel 1;
+#X obj 329 58 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 275 142 line~;
+#X obj 220 291 *~ 0.9;
+#X obj 28 281 *~ 0.9;
+#X obj 79 359 outlet~;
+#X obj 306 0 r teclado_global4;
+#X connect 0 0 16 0;
+#X connect 1 0 17 0;
+#X connect 2 0 4 0;
+#X connect 2 0 10 0;
+#X connect 3 0 8 0;
+#X connect 3 1 14 0;
+#X connect 4 0 1 0;
+#X connect 5 0 9 0;
+#X connect 6 0 9 0;
+#X connect 7 0 5 0;
+#X connect 7 1 6 0;
+#X connect 8 0 7 0;
+#X connect 9 0 4 1;
+#X connect 10 0 0 0;
+#X connect 11 0 15 0;
+#X connect 12 0 15 0;
+#X connect 13 0 11 0;
+#X connect 13 1 12 0;
+#X connect 14 0 13 0;
+#X connect 15 0 10 1;
+#X connect 16 0 18 0;
+#X connect 17 0 18 0;
+#X connect 19 0 3 0;

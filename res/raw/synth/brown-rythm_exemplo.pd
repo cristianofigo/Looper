@@ -1,0 +1,45 @@
+#N canvas 0 0 1143 597 16;
+#X text 268 41 Generates a brownian-movement-like rhythm of a geometrical
+row of entry delays (ED) between a minimum and a maximum entry delay
+and a certain number of ED-values. The brownian factor determines the
+distance between two succeding rhythmical values. A factor of 0 produces
+a periodic rhythm \, wheras a factor of 1 will output random values
+of the given range.;
+#X floatatom 419 350 8 0 0 3 chosen_ED - -;
+#X floatatom 258 350 4 0 0 3 row_index - -;
+#X obj 97 278 tgl 15 0 empty empty start/stop 0 -6 0 8 -262144 -1 -1
+0 1;
+#X floatatom 168 260 4 0 0 2 min_ED - -;
+#X floatatom 312 223 4 0 0 2 max_ED - -;
+#X floatatom 417 284 4 0 0 2 brownian_factor - -;
+#X floatatom 240 268 4 0 0 2 ED-values - -;
+#X text 197 65 vs. 2;
+#X text 61 65 brown-rhythm;
+#X text 79 436 1993-94 by Karlheinz Essl;
+#X obj 97 317 brown-rhythm 100 1000 12 0.25;
+#X obj 139 361 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 97 386 QT-PercPlayer;
+#X msg 97 350 60;
+#X obj 419 436 prepend add2;
+#X msg 419 471 351.119 351.119 533.67 657.933 811.131 1000 657.933
+657.933 432.876 351.119 284.804 432.876 284.804 432.876 351.119 1000
+1000 1000 1000 1000 1000 1000 1000 1000 100 100 100 100 100 100 100
+1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000
+1000 100 1000 100 100 100 100 100 100 100 100 100 100 100 100 100 100
+100 100 100 100 100 100 100 100 100 100 1000 1000 1000 1000 1000 1000
+1000;
+#X msg 614 397 set;
+#X connect 1 0 15 0;
+#X connect 3 0 11 0;
+#X connect 4 0 11 1;
+#X connect 5 0 11 3;
+#X connect 6 0 11 4;
+#X connect 7 0 11 2;
+#X connect 11 0 14 0;
+#X connect 11 0 12 0;
+#X connect 11 1 2 0;
+#X connect 11 2 1 0;
+#X connect 14 0 13 0;
+#X connect 15 0 16 0;
+#X connect 17 0 16 0;

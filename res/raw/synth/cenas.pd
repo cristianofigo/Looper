@@ -1,0 +1,21 @@
+#N canvas 55 46 1159 632 10;
+#X obj 35 54 comment 0 10 helvetica ? 0 0 0 0 figocris@gmail.com;
+#X obj 17 14 comment 0 40 Times Sinc-cenario 0 0 0 0 [cenas];
+#X obj 37 149 inlet estabilidade ritmica;
+#X text -30 149 entradas:;
+#X obj 559 147 inlet amp;
+#X text -40 492 saidas:;
+#X obj 27 494 outlet gerador ritmico;
+#X obj 192 495 outlet gerador melodico;
+#X obj 365 496 outlet gerador amplitude;
+#X obj 551 496 outlet sintese;
+#X obj 209 149 inlet densidade ritmica;
+#X obj 363 148 inlet permeabilidade melodica;
+#X text 211 130 [----------------------------------------------------]
+;
+#X text 264 119 fazer;
+#X obj 782 498 outlet harmonizador;
+#X obj 663 498 outlet synth_amp;
+#X obj 908 497 outlet harm_amp;
+#X obj 644 147 inlet timbreid;
+#X obj 777 91 inlet liga cena;

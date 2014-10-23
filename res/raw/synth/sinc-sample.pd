@@ -1,0 +1,75 @@
+#N canvas 367 57 752 558 10;
+#X obj -106 18 cnv 15 230 170 empty empty sinc-sample 20 12 0 14 -262130
+-66577 0;
+#X obj -53 357 readsf~;
+#X msg -53 313 start;
+#X obj -53 425 outlet~;
+#X msg 181 188 open \$1;
+#X obj 181 163 openpanel;
+#X obj 130 239 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 130 272 spigot;
+#X obj 100 426 outlet;
+#X obj 130 296 t b b;
+#X obj -53 290 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg -100 226 stop;
+#X obj 14 425 s refresh;
+#X obj 32 238 t b a;
+#X obj -10 126 bng 15 250 50 0 empty empty abrir 17 7 0 10 -262144
+-1 -1;
+#X obj 191 222 prepend set;
+#X msg 193 246 open /Users/cristianofigueiro/Desktop/performance_usr:maquina2_juizdefora2013/sample_teste.wav
+;
+#X obj -93 61 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144 -1
+-1 0;
+#X obj -93 85 select 0 1 2 3 4 5;
+#X obj 61 119 tgl 15 0 empty empty loop 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 128 340 prepend set;
+#X msg 157 372 open /Users/cristianofigueiro/Desktop/performance_usr:maquina2_juizdefora2013/sample_teste.wav
+;
+#X obj -93 155 bng 15 250 50 0 empty empty stop 17 7 0 10 -262144 -1
+-1;
+#X text 40 59 samples;
+#X msg 194 78 open /home/livre/pesquisa/SINCOPA/samples/maria-tarrega.wav
+;
+#X msg 195 101 open /home/livre/pesquisa/SINCOPA/samples/vlao2.wav
+;
+#X msg 193 126 open /home/livre/pesquisa/SINCOPA/samples/preludio998.wav
+;
+#X msg 192 31 open /Users/cristianofigueiro/Desktop/performance_usr:maquina2_juizdefora2013/sample_teste.wav
+;
+#X connect 1 0 3 0;
+#X connect 1 1 6 0;
+#X connect 1 1 8 0;
+#X connect 1 1 12 0;
+#X connect 2 0 1 0;
+#X connect 4 0 13 0;
+#X connect 4 0 15 0;
+#X connect 5 0 4 0;
+#X connect 6 0 7 0;
+#X connect 7 0 9 0;
+#X connect 9 0 2 0;
+#X connect 9 1 21 0;
+#X connect 10 0 2 0;
+#X connect 11 0 1 0;
+#X connect 13 0 10 0;
+#X connect 13 1 1 0;
+#X connect 13 1 20 0;
+#X connect 14 0 5 0;
+#X connect 15 0 16 0;
+#X connect 17 0 18 0;
+#X connect 18 0 27 0;
+#X connect 18 1 24 0;
+#X connect 18 2 25 0;
+#X connect 18 3 26 0;
+#X connect 19 0 7 1;
+#X connect 20 0 21 0;
+#X connect 21 0 1 0;
+#X connect 22 0 11 0;
+#X connect 24 0 13 0;
+#X connect 25 0 13 0;
+#X connect 26 0 13 0;
+#X connect 27 0 13 0;
+#X coords 0 -1 1 1 235 180 2 -110 15;

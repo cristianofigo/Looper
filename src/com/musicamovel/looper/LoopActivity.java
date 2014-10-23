@@ -138,7 +138,9 @@ public class LoopActivity extends PApplet {
 
 	ControlP5 cp5;
 	
+	boolean ligafx1 = false;
 	
+	boolean ligafx2 = false;
 	
 	
 	public void setup() {	
@@ -148,19 +150,37 @@ public class LoopActivity extends PApplet {
 	  
 	  cp5.getTab("default")
 	     .activateEvent(true)
-	     .setLabel("ABOUT")
-	     .setWidth((int)(width*.15f))
-	     .setHeight((int)(width*.3f))
-	     .setId(1)
-	     ;
-
-	  cp5.getTab("Loops")
-	     .activateEvent(true)
 	     .setLabel("Loops")
-	     .setWidth((int)(width*.15f))
-	     .setHeight((int)(width*.2f))
+	     .setWidth((int)(width*.1f))
+	     .setHeight((int)(height*.1f))
 	     .setId(1)
 	     ;
+	  
+	  cp5.getTab("Fx")
+	     .activateEvent(true)
+	     .setLabel("Fx")
+	     .setWidth((int)(width*.1f))
+	     .setHeight((int)(height*.1f))
+	     .setId(2)
+	     ;
+	  
+	  cp5.getTab("Rec")
+	     .activateEvent(true)
+	     .setLabel("Rec")
+	     .setWidth((int)(width*.1f))
+	     .setHeight((int)(height*.1f))
+	     .setId(3)
+	     ;
+	  
+	  cp5.getTab("ABOUT")
+	     .activateEvent(true)
+	     .setLabel("ABOUT")
+	     .setWidth((int)(width*.1f))
+	     .setHeight((int)(height*.1f))
+	     .setId(4)
+	     ;
+	  
+/// loops	  
 	  
 	  //rec1
 	  cp5.addButton("Canal1")
@@ -237,8 +257,23 @@ public class LoopActivity extends PApplet {
 	     .setScrollSensitivity(1.0f)
 	     ;
 	  
-//	  cp5.getController("Canal1").moveTo("Loops");
-//	  cp5.getController("Vol1").moveTo("Loops");
+	  //// fx
+	  
+	  cp5.addToggle("ligafx1")
+	     .setValue(0)
+	     .setPosition(width*0.1f,height*0.15f)
+	     .setSize(((int)(width*0.1f)), ((int)(width*0.1f)))
+	     ;
+	  
+	  cp5.addToggle("ligafx2")
+	     .setValue(0)
+	     .setPosition(width*0.25f,height*0.15f)
+	     .setSize(((int)(width*0.1f)), ((int)(width*0.1f)))
+	     ;
+	     
+	  
+	  cp5.getController("ligafx1").moveTo("Fx");
+	  cp5.getController("ligafx2").moveTo("Fx");
 //	  cp5.getController("Canal2").moveTo("Loops");
 //	  cp5.getController("Vol2").moveTo("Loops");
 //	  cp5.getController("Canal3").moveTo("Loops");
@@ -271,7 +306,7 @@ public class LoopActivity extends PApplet {
 
 	public void draw() {
 		background(255);
-		
+	//loops	
 		float vol1 = cp5.getController("vol1").getValue();
 		PdBase.sendFloat("vol1", vol1);
 		
@@ -290,247 +325,13 @@ public class LoopActivity extends PApplet {
 		float bpm_gui = cp5.getController("bpm_gui").getValue();
 		PdBase.sendFloat("bpm_gui", bpm_gui);
 		
-		//guias design
-		
-//		for(int xt = 0; xt < width; xt += width/10){
-//			fill(0);
-//			line(xt, 0, xt, width);
-//		}
-//		for(int yt = 0; yt < height; yt += height/10){
-//			fill(0);
-//			line(0, yt, width, yt);
-//		}
-		// default
+		// fx
 		
 		
+		PdBase.sendFloat("ligafx1", cp5.getValue("ligafx1"));
+		PdBase.sendFloat("ligafx2", cp5.getValue("ligafx2"));
 		
-		//aba set_tempo
-		
-//		cp5.getController("bpm_gui").getValueLabel().align(ControlP5.LEFT, ControlP5.BOTTOM_OUTSIDE).setPaddingX(0);
-//		cp5.getController("bpm_gui").getCaptionLabel().align(ControlP5.RIGHT, ControlP5.BOTTOM_OUTSIDE).setPaddingX(0);
-//		float bpm_slide = cp5.getController("bpm_gui").getValue();
-//		int newbpm_slide = (int)bpm_slide;
-//		PdBase.sendFloat("bpm_gui", newbpm_slide);
-//		text("BPM " + newbpm_slide, width*.7f, height*.8f);
-//		
-//		cp5.getController("acento_gui").getValueLabel().align(ControlP5.LEFT, ControlP5.BOTTOM_OUTSIDE).setPaddingX(0);
-//		cp5.getController("acento_gui").getCaptionLabel().align(ControlP5.RIGHT, ControlP5.BOTTOM_OUTSIDE).setPaddingX(0);
-//		float acento = cp5.getController("acento_gui").getValue();
-//		int newacento = (int)acento;
-//		PdBase.sendFloat("acento_gui", newacento);
-//		text("ACENTO " + newacento, width*.7f, height*.85f);
-//		
-//		cp5.getController("compassos_gui").getValueLabel().align(ControlP5.LEFT, ControlP5.BOTTOM_OUTSIDE).setPaddingX(0);
-//		cp5.getController("compassos_gui").getCaptionLabel().align(ControlP5.RIGHT, ControlP5.BOTTOM_OUTSIDE).setPaddingX(0);
-//		float compasso = cp5.getController("compassos_gui").getValue();
-//		int newcompasso = (int)compasso;
-//		PdBase.sendFloat("compassos_gui", newcompasso);
-//		text("COMPASSOS " + newcompasso, width*.7f, height*.9f);
-//		
-//		if(atualiza_gui==true) {
-//			  PdBase.sendBang("atualiza_gui");
-//		    //fill(255,255,220);
-//		  }
-//		
-//		 
-//		
-//		//float[] pdpro = new float[bla];
-//		
-//		
-//		textSize(width*0.1f);
-//		
-//		  fill(0, 102, 153);
-//		 
-//		  text("Looper", width*.4f, height*0.15f); 
-//		  textSize(width*0.02f);
-//		  text("Mœsica M—vel", width*0.7f, height*0.2f);
-//		//background(255);
-//		
-//		comecaGrabacao();
-//		terminaGrabacao();
-//	  //background(0);
-//	  
-//	  //inicializar o array frompd[] no processing
-//	  
-////	  if (!pegoArray) {
-////		  pdpro = getArrayFromPd("arraypd");
-////		  if (pdpro.length > 0)
-////			  pegoArray = true;
-////	  }
-//	  
-//		
-//	  
-//	  pushMatrix();
-//	  
-//	  if(calibra==true) {
-//		  PdBase.sendFloat("calibra", 1);
-//	    //fill(255,255,220);
-//	  }else {
-//		  PdBase.sendFloat("calibra", 0);
-//		  }
-//	  
-//	  if(playcursor==true){
-//		  PdBase.sendFloat("play_gui", 1);
-//		 // float [] cursor = getArrayFromPd("cursor_gui");
-//		  
-//		  float [] cursor = new float[1];
-//		  PdBase.readArray(cursor, 0, "cursor_gui", 0, 1);
-//		  
-//		  //pegar tamanho do array1 e mapear essevalor para valor de cursor[0] no x
-//		  
-//		 // int tamanholoop = PdBase.arraySize("array1");
-//		  
-//		  
-//		  strokeWeight(3);
-//		  stroke(0);
-//		  fill(0);
-//			 // float cursory = map(pdpro[i], -.5f, .5f, height*.9f, height);
-//			//  float cursorx = map(i, 0, pdpro.length, width*0.7f, width);
-//		  println(cursor[0]);
-//		    line(map(cursor[0], 0, 1, width*.2f, width*.6f), height*.3f  ,map(cursor[0], 0, 1, width*.2f, width*.6f), height*.8f);
-//		  
-//	  }else {
-//		  PdBase.sendFloat("play_gui", 0);
-//		  strokeWeight(2);
-//	  }
-//	  
-//	  if(canal_1==true) {
-//		  PdBase.sendFloat("rec1", 1);
-//	    fill(255,255,220);
-//	  } else {
-//		  PdBase.sendFloat("rec1", 0);
-//	    fill(128,128,110);
-//	  }
-//	  if(metronomo==true) {
-//		  PdBase.sendFloat("metronomo", 1);
-//	    fill(255,255,220);
-//	  } else {
-//		  PdBase.sendFloat("metronomo", 0);
-//	    fill(128,128,110);
-//	  }
-//	  PdBase.sendFloat("vol1", cp5.getValue("volcan1"));
-//	  
-//	  if(canal_2==true) {
-//		  PdBase.sendFloat("toggle2", 1);
-//	    fill(255,255,220);
-//	  } else {
-//		  PdBase.sendFloat("toggle2", 0);
-//	    fill(128,128,110);
-//	  }
-//	  PdBase.sendFloat("volcan2", cp5.getValue("volcan2"));
-//	  if(canal_3==true) {
-//		  PdBase.sendFloat("toggle3", 1);
-//	    fill(255,255,220);
-//	  } else {
-//		  PdBase.sendFloat("toggle3", 0);
-//	    fill(128,128,110);
-//	  }
-//	  PdBase.sendFloat("volcan3", cp5.getValue("volcan3"));
-//	  if(canal_4==true) {
-//		  PdBase.sendFloat("toggle4", 1);
-//	    fill(255,255,220);
-//	  } else {
-//		  PdBase.sendFloat("toggle4", 0);
-//	    fill(128,128,110);
-//	  }
-//	  PdBase.sendFloat("volcan4", cp5.getValue("volcan4"));
-//	  PdBase.sendFloat("reverb1", cp5.getValue("reverb1"));
-//	  PdBase.sendFloat("feedback1", cp5.getValue("feedback1"));
-//	  PdBase.sendFloat("reverb2", cp5.getValue("reverb2"));
-//	  PdBase.sendFloat("feedback2", cp5.getValue("feedback2"));
-//	  PdBase.sendFloat("reverb3", cp5.getValue("reverb3"));
-//	  PdBase.sendFloat("feedback3", cp5.getValue("feedback3"));
-//	  PdBase.sendFloat("reverb4", cp5.getValue("reverb4"));
-//	  PdBase.sendFloat("feedback4", cp5.getValue("feedback4"));
-//	  
-//	  PdBase.sendFloat("recgeral", cp5.getValue("recgeral"));
-//	  PdBase.sendFloat("volumegeral", cp5.getValue("volumegeral"));
-//	  PdBase.sendFloat("play", cp5.getValue("play"));
-//	  PdBase.sendFloat("playvolume", cp5.getValue("playvolume"));
-//	  PdBase.sendFloat("latencia_gui", cp5.getValue("latencia_gui"));
-//	  
-//	  
-//	  //copiaarray();
-////	  
-////	  float [] arraypd = pdManager.getArrayFromPd("audio");
-////		 for (int i=0; i < arraypd.length; i++){
-////		    	fill(255);
-////		    	strokeWeight(2);
-////				  stroke(255);
-////		    	point(i+20, map(arraypd[i], -1, 1, height*.5f, height*.8f));
-////		    }
-////	  
-//	  
-//	  ////arrayssss
-//	  
-//	  if(ligaonda==true) {
-//		 
-//	  float [] pdpro = getArrayFromPd("metro");
-//	  strokeWeight(2);
-//	  stroke(0);
-//	  for (int i = 0; i < (pdpro.length - 1); i+=50) {
-//		  fill(0);
-//		  float plota = map(pdpro[i], -.5f, .5f, height*.18f, height*.22f);
-//		  float plotax = map(i, 0, pdpro.length, width*0.2f, width*0.6f);
-//	    point(plotax, plota);
-//	  }
-//	  
-//	  float [] canal1 = getArrayFromPd("array1");
-//	  strokeWeight(2);
-//	  stroke(0);
-//	  for (int i = 0; i < (canal1.length - 1); i+=50) {
-//		  fill(0);
-//		  float canal1y = map(canal1[i], -.5f, .5f, height*.25f, height*.4f);
-//		  float canal1x = map(i, 0, canal1.length, width*0.2f, width*0.6f);
-//	    point(canal1x, canal1y);
-//	  }
-//	  
-//	  float [] canal2 = getArrayFromPd("array2");
-//	  strokeWeight(2);
-//	  stroke(0);
-//	  for (int i = 0; i < (canal2.length - 1); i+=50) {
-//		  fill(0);
-//		  float canal2y = map(canal2[i], -.5f, .5f, height*.4f, height*.5f);
-//		  float canal2x = map(i, 0, canal2.length, width*0.2f, width*0.6f);
-//	    point(canal2x, canal2y);
-//	  }
-//	  
-//	  float [] canal3 = getArrayFromPd("array3");
-//	  strokeWeight(2);
-//	  stroke(0);
-//	  for (int i = 0; i < (canal3.length - 1); i+=50) {
-//		  fill(0);
-//		  float canal3y = map(canal3[i], -.5f, .5f, height*.55f, height*.65f);
-//		  float canal3x = map(i, 0, canal3.length, width*0.2f, width*0.6f);
-//	    point(canal3x, canal3y);
-//	  }
-//	  
-//	  float [] canal4 = getArrayFromPd("array4");
-//	  strokeWeight(2);
-//	  stroke(0);
-//	  for (int i = 0; i < (canal4.length - 1); i+=50) {
-//		  fill(0);
-//		  float canal4y = map(canal4[i], -.5f, .5f, height*.7f, height*.8f);
-//		  float canal4x = map(i, 0, canal4.length, width*0.2f, width*0.6f);
-//	    point(canal4x, canal4y);
-//	  }
-//	  
-//	  } 
-//	  
-//	  popMatrix();
-	 
 	}
-
-	
-
-//	public void mousePressed(){
-//		//botao rec0
-//	 if(mouseX > width*0.1f && mouseX < (width*0.1f + width*0.05f)
-//	  && mouseY > height*0.25f && mouseY < (height*0.25f + height*0.05f)){
-//	    i=0;
-//	    rec = !rec;
-//	}
-//	}
 	
 public void comecaGrabacao() {
     prepareRecord();

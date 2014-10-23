@@ -1,0 +1,152 @@
+#N canvas 56 24 1148 529 10;
+#X obj 74 113 bng 15 250 50 0 empty empty empty 20 8 0 8 -262144 -1
+-1;
+#X obj 74 216 bng 15 250 50 0 empty empty empty 20 8 0 8 -262144 -1
+-1;
+#X obj 206 227 bng 15 250 50 0 empty empty empty 20 8 0 8 -262144 -1
+-1;
+#X obj 251 226 bng 15 250 50 0 empty empty empty 20 8 0 8 -262144 -1
+-1;
+#X obj 305 -31 bng 20 250 50 0 empty empty empty 20 8 0 8 -262144 -1
+-1;
+#X obj 358 -34 r state;
+#X obj 372 103 bng 15 250 50 0 empty empty empty 20 8 0 8 -262144 -1
+-1;
+#X obj 372 216 bng 15 250 50 0 empty empty empty 20 8 0 8 -262144 -1
+-1;
+#X obj 495 225 bng 15 250 50 0 empty empty empty 20 8 0 8 -262144 -1
+-1;
+#X obj 540 224 bng 15 250 50 0 empty empty empty 20 8 0 8 -262144 -1
+-1;
+#X obj 719 104 bng 15 250 50 0 empty empty empty 20 8 0 8 -262144 -1
+-1;
+#X obj 719 219 bng 15 250 50 0 empty empty empty 20 8 0 8 -262144 -1
+-1;
+#X obj 824 218 bng 15 250 50 0 empty empty empty 20 8 0 8 -262144 -1
+-1;
+#X obj 869 218 bng 15 250 50 0 empty empty empty 20 8 0 8 -262144 -1
+-1;
+#X obj 74 136 random 100;
+#X obj 74 162 moses 30;
+#X obj 206 204 moses 60;
+#X obj 372 130 random 100;
+#X obj 372 160 moses 10;
+#X obj 719 131 random 100;
+#X obj 719 160 moses 70;
+#X obj 824 192 moses 80;
+#X text 955 12 reset;
+#X obj 305 28 sel tonica sub-dominante dominante;
+#X msg 157 277 tonica;
+#X msg 206 275 sub-dominante;
+#X msg 251 301 dominante;
+#X msg 447 279 tonica;
+#X msg 495 279 sub-dominante;
+#X msg 540 301 dominante;
+#X msg 770 286 tonica;
+#X msg 869 262 dominante;
+#X msg 824 287 sub-dominante;
+#X obj 305 2 symbol;
+#X obj 206 340 list2symbol;
+#X obj 206 368 s state;
+#X obj 495 331 list2symbol;
+#X obj 495 361 s state;
+#X obj 824 325 list2symbol;
+#X obj 824 353 s state;
+#X text 228 -29 Novo acorde;
+#X symbolatom 358 -9 10 0 0 0 - - -;
+#X msg 960 32 tonica;
+#X obj 993 83 list2symbol;
+#X obj 960 88 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 960 56 t b a;
+#X msg 19 294 I;
+#X msg 51 294 ii;
+#X msg 86 294 V;
+#X msg 342 280 iii;
+#X msg 370 280 IV;
+#X msg 402 280 V7;
+#X msg 668 289 IV;
+#X msg 700 289 vii;
+#X msg 640 289 vi;
+#X obj 495 200 moses 30;
+#X obj 37 340 s novo_acorde;
+#X obj 362 335 s novo_acorde;
+#X obj 657 328 s novo_acorde;
+#X obj 330 406 r novo_acorde;
+#X obj 330 430 prepend add2;
+#X msg 330 456 I I I I ii V7 vi V vii vi I V vii vii vi I I ii V7 vi
+ii IV V IV V7 vi ii V7 vi ii iii I ii iii V vi ii V7 IV V7 vi ii V7
+vii vi V vi V IV V7 vi I I I ii V7 vii vi ii V7 IV V7 vi ii IV V7 vi
+V;
+#X text 249 459 ---->;
+#X text 115 458 sequência de acordes;
+#X connect 0 0 14 0;
+#X connect 1 0 24 0;
+#X connect 1 0 46 0;
+#X connect 2 0 25 0;
+#X connect 2 0 47 0;
+#X connect 3 0 26 0;
+#X connect 3 0 48 0;
+#X connect 4 0 33 0;
+#X connect 5 0 33 1;
+#X connect 5 0 41 0;
+#X connect 6 0 17 0;
+#X connect 7 0 27 0;
+#X connect 7 0 49 0;
+#X connect 8 0 28 0;
+#X connect 8 0 50 0;
+#X connect 9 0 29 0;
+#X connect 9 0 51 0;
+#X connect 10 0 19 0;
+#X connect 11 0 30 0;
+#X connect 11 0 54 0;
+#X connect 12 0 32 0;
+#X connect 12 0 52 0;
+#X connect 13 0 31 0;
+#X connect 13 0 53 0;
+#X connect 14 0 15 0;
+#X connect 15 0 1 0;
+#X connect 15 1 16 0;
+#X connect 16 0 2 0;
+#X connect 16 1 3 0;
+#X connect 17 0 18 0;
+#X connect 18 0 7 0;
+#X connect 18 1 55 0;
+#X connect 19 0 20 0;
+#X connect 20 0 11 0;
+#X connect 20 1 21 0;
+#X connect 21 0 12 0;
+#X connect 21 1 13 0;
+#X connect 23 0 0 0;
+#X connect 23 1 6 0;
+#X connect 23 2 10 0;
+#X connect 24 0 34 0;
+#X connect 25 0 34 0;
+#X connect 26 0 34 0;
+#X connect 27 0 36 0;
+#X connect 28 0 36 0;
+#X connect 29 0 36 0;
+#X connect 30 0 38 0;
+#X connect 31 0 38 0;
+#X connect 32 0 38 0;
+#X connect 33 0 23 0;
+#X connect 34 0 35 0;
+#X connect 36 0 37 0;
+#X connect 38 0 39 0;
+#X connect 42 0 45 0;
+#X connect 43 0 33 1;
+#X connect 45 0 44 0;
+#X connect 45 1 43 0;
+#X connect 46 0 56 0;
+#X connect 47 0 56 0;
+#X connect 48 0 56 0;
+#X connect 49 0 57 0;
+#X connect 50 0 57 0;
+#X connect 51 0 57 0;
+#X connect 52 0 58 0;
+#X connect 53 0 58 0;
+#X connect 54 0 58 0;
+#X connect 55 0 8 0;
+#X connect 55 1 9 0;
+#X connect 59 0 60 0;
+#X connect 60 0 61 0;

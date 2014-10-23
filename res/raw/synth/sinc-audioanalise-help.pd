@@ -1,0 +1,10 @@
+#N canvas 633 25 487 563 10;
+#X obj -5 139 sinc-sample;
+#X obj -5 179 sinc-audioanalise;
+#X obj 150 109 bng 15 250 50 0 empty empty abrir_arquiv -6 -5 0 5 -262144
+-1 -1;
+#X obj -5 109 hradio 10 1 0 12 empty empty navega_pasta 0 -8 0 8 -262144
+-1 -1 0;
+#X connect 0 0 1 0;
+#X connect 2 0 0 1;
+#X connect 3 0 0 0;

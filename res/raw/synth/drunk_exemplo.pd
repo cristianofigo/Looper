@@ -1,0 +1,27 @@
+#N canvas 0 24 1280 692 16;
+#X obj 384 215 until;
+#X obj 384 453 prepend add2;
+#X msg 384 487 2 2 2 2 2 3 2 1 2 2 2 3 3 3 3 3;
+#X obj 384 416 drunk 10;
+#X obj 461 382 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 2;
+#X floatatom 488 415 5 0 0 1 nº_de_passos - -;
+#X obj 462 303 prepend add2;
+#X msg 462 337 4 5 0 1 4 2 4 0 5 7 9 4 4 8 4 3;
+#X obj 462 266 drunk 10;
+#X obj 539 241 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 6;
+#X floatatom 566 265 5 0 0 1 nº_de_passos - -;
+#X msg 384 187 16;
+#X obj 749 111 brown-rhythm;
+#X connect 0 0 3 0;
+#X connect 0 0 8 0;
+#X connect 1 0 2 0;
+#X connect 3 0 1 0;
+#X connect 4 0 3 2;
+#X connect 4 0 5 0;
+#X connect 6 0 7 0;
+#X connect 8 0 6 0;
+#X connect 9 0 8 2;
+#X connect 9 0 10 0;
+#X connect 11 0 0 0;

@@ -1,0 +1,6 @@
+#N canvas 348 59 450 300 10;
+#X declare;
+#X declare -path ~/Desktop/a_futuro/libs/rj;
+#X obj 37 37 path;
+#X obj 146 243 c_adsr;
+#X obj 108 51 declare -path ~/Desktop/a_futuro/libs/rj;

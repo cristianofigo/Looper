@@ -1,0 +1,255 @@
+#N canvas 159 63 1079 709 12;
+#X declare -path Users/cristianofigueiro/Documents/a_futuro/libs/rj
+;
+#X declare -path Users/cristianofigueiro/Documents/a_futuro/sinc_abs
+;
+#X declare -path Users/cristianofigueiro/Documents/a_futuro/libs/DIY2
+;
+#X obj 862 546 vsl 40 100 0 1 0 0 empty empty empty 0 -9 0 10 -257985
+-1 -1 0 1;
+#X obj 906 546 vsl 40 100 0 1 0 0 empty empty empty 0 -9 0 10 -257985
+-1 -1 0 1;
+#X obj 950 546 vsl 40 100 0 1 0 0 empty empty empty 0 -9 0 10 -257985
+-1 -1 0 1;
+#X obj 994 546 vsl 40 100 0 1 0 0 empty empty empty 0 -9 0 10 -257985
+-1 -1 0 1;
+#X obj 429 495 line~;
+#X msg 429 467 \$1 100;
+#X obj 410 529 *~;
+#X obj 429 441 r amp1;
+#X obj 298 515 line~;
+#X msg 298 487 \$1 100;
+#X obj 279 541 *~;
+#X obj 298 461 r amp2;
+#X obj 168 475 line~;
+#X msg 168 447 \$1 100;
+#X obj 149 511 *~;
+#X obj 32 515 line~;
+#X msg 32 487 \$1 100;
+#X obj 15 545 *~;
+#X obj 168 421 r amp3;
+#X obj 32 461 r amp4;
+#X obj 856 654 s amp1;
+#X obj 896 657 s amp2;
+#X obj 948 656 s amp3;
+#X obj 994 654 s amp4;
+#X msg 1015 514 0.5;
+#X obj 865 515 hsl 128 15 0 1 0 0 empty empty volume_geral -2 -8 0
+10 -260097 -1 -1 0 1;
+#X obj 10 -4 comment 0 36 Courier ? 0 0 0 0 eimas 1;
+#X obj 101 26 comment 0 12 Courier ? 0 0 0 0 figocris@gmail.com;
+#X obj 259 55 keyname;
+#X obj 305 115 spigot;
+#X obj 362 33 tgl 40 0 empty empty empty 17 7 0 10 -258113 -1 -1 0
+1;
+#X obj 367 220 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 429 211 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 715 205 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 305 146 spigot;
+#X obj 305 81 t s b b b b b b b b b;
+#X obj 305 214 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 431 150 switch~;
+#X obj 431 125 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 204 260 counter 3;
+#X floatatom 204 289 5 0 0 0 - - -;
+#N canvas 801 104 424 391 interruptor 0;
+#X obj 61 126 tgl 20 0 empty empty empty 5 -6 0 10 -262144 -1 -1 0
+1;
+#X obj 101 127 tgl 20 0 empty empty empty 5 -6 0 10 -228856 -1 -1 0
+1;
+#X obj 142 127 tgl 20 0 empty empty empty 5 -6 0 10 -191407 -1 -1 0
+1;
+#X obj 182 127 tgl 20 0 empty empty empty 5 -6 0 10 -261234 -1 -1 0
+1;
+#X msg 114 -102 0;
+#X msg 145 -103 0;
+#X msg 175 -104 0;
+#X msg 204 -105 0;
+#X obj 101 -176 inlet;
+#X obj 61 154 outlet;
+#X obj 101 154 outlet;
+#X obj 142 154 outlet;
+#X obj 182 154 outlet;
+#X obj 101 -147 select 0 1 2 3;
+#X connect 0 0 9 0;
+#X connect 1 0 10 0;
+#X connect 2 0 11 0;
+#X connect 3 0 12 0;
+#X connect 4 0 1 0;
+#X connect 4 0 2 0;
+#X connect 4 0 3 0;
+#X connect 5 0 0 0;
+#X connect 5 0 2 0;
+#X connect 5 0 3 0;
+#X connect 6 0 0 0;
+#X connect 6 0 1 0;
+#X connect 6 0 3 0;
+#X connect 7 0 0 0;
+#X connect 7 0 1 0;
+#X connect 7 0 2 0;
+#X connect 8 0 13 0;
+#X connect 13 0 0 0;
+#X connect 13 0 4 0;
+#X connect 13 1 1 0;
+#X connect 13 1 5 0;
+#X connect 13 2 2 0;
+#X connect 13 2 6 0;
+#X connect 13 3 3 0;
+#X connect 13 3 7 0;
+#X restore 203 314 pd interruptor --------------;
+#X text 486 3 Control_L = sel cada canal;
+#X text 489 22 Space = grava e stop;
+#X text 492 41 Control_R = limpa cada canal;
+#X text 366 244 comment;
+#X msg 367 245 grava e stop;
+#X obj 566 388 mono-wetfilter;
+#X obj 565 484 mono-delayfb;
+#X msg 578 356 0 0.85;
+#X msg 628 358 1 0.85;
+#X msg 602 459 0 0.85;
+#X msg 652 459 1 0.85;
+#X obj 733 590 line~;
+#X msg 758 531 1 1000;
+#X msg 784 558 0 1000;
+#X obj 566 581 *~;
+#X obj 715 227 sinc-alternate;
+#X obj 133 215 send~ sinal_limpo;
+#X obj 566 299 r~ sinal_limpo;
+#X obj 757 329 bang;
+#X obj 757 305 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 456 574 line~;
+#X msg 479 515 1 1000;
+#X msg 505 542 0 1000;
+#X obj 429 606 *~;
+#X obj 757 276 loadbang;
+#X msg 689 359 2 0.5;
+#X msg 700 461 2 0.5;
+#X obj 411 351 sinc-looper;
+#X text 495 62 Delete = liga efeito;
+#X obj 148 355 sinc-looper;
+#X obj 16 350 sinc-looper;
+#X obj 280 348 sinc-looper;
+#X obj 28 53 sinc-audioin;
+#X text 788 3 arrumar:;
+#X text 789 23 tecla limpar canal;
+#X obj 305 181 sel Control_L Space ?? .;
+#X obj 902 345 autopan;
+#X obj 891 278 catch~ loop;
+#X obj 949 317 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 348 664 throw~ loop;
+#X obj 512 653 throw~ efeito;
+#X obj 912 455 autopan;
+#X obj 959 427 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 901 388 catch~ efeito;
+#X obj 362 5 r um;
+#X obj 702 43 declare -path Users/cristianofigueiro/Documents/a_futuro/libs/rj
+;
+#X obj 702 102 declare -path Users/cristianofigueiro/Documents/a_futuro/sinc_abs
+;
+#X obj 683 154 declare -path Users/cristianofigueiro/Documents/a_futuro/libs/DIY2
+;
+#X connect 0 0 20 0;
+#X connect 1 0 21 0;
+#X connect 2 0 22 0;
+#X connect 3 0 23 0;
+#X connect 4 0 6 1;
+#X connect 5 0 4 0;
+#X connect 6 0 81 0;
+#X connect 7 0 5 0;
+#X connect 8 0 10 1;
+#X connect 9 0 8 0;
+#X connect 10 0 81 0;
+#X connect 11 0 9 0;
+#X connect 12 0 14 1;
+#X connect 13 0 12 0;
+#X connect 14 0 81 0;
+#X connect 15 0 17 1;
+#X connect 16 0 15 0;
+#X connect 17 0 81 0;
+#X connect 18 0 13 0;
+#X connect 19 0 16 0;
+#X connect 24 0 0 0;
+#X connect 24 0 1 0;
+#X connect 24 0 2 0;
+#X connect 24 0 3 0;
+#X connect 25 0 0 0;
+#X connect 25 0 1 0;
+#X connect 25 0 2 0;
+#X connect 25 0 3 0;
+#X connect 28 0 34 1;
+#X connect 28 1 35 0;
+#X connect 29 0 34 0;
+#X connect 30 0 29 1;
+#X connect 30 0 38 0;
+#X connect 31 0 46 0;
+#X connect 32 0 69 2;
+#X connect 32 0 71 2;
+#X connect 32 0 72 2;
+#X connect 32 0 73 2;
+#X connect 33 0 57 0;
+#X connect 34 0 77 0;
+#X connect 35 0 29 0;
+#X connect 36 0 39 0;
+#X connect 38 0 37 0;
+#X connect 39 0 40 0;
+#X connect 40 0 41 0;
+#X connect 41 0 72 1;
+#X connect 41 1 71 1;
+#X connect 41 2 73 1;
+#X connect 41 3 69 1;
+#X connect 47 0 48 0;
+#X connect 48 0 56 0;
+#X connect 49 0 47 1;
+#X connect 50 0 47 1;
+#X connect 51 0 48 1;
+#X connect 52 0 48 1;
+#X connect 53 0 56 1;
+#X connect 54 0 53 0;
+#X connect 55 0 53 0;
+#X connect 56 0 82 0;
+#X connect 57 0 54 0;
+#X connect 57 0 64 0;
+#X connect 57 1 55 0;
+#X connect 57 1 63 0;
+#X connect 59 0 47 0;
+#X connect 59 0 65 0;
+#X connect 60 0 49 0;
+#X connect 60 0 50 0;
+#X connect 60 0 67 0;
+#X connect 60 0 51 0;
+#X connect 60 0 52 0;
+#X connect 60 0 68 0;
+#X connect 61 0 60 0;
+#X connect 62 0 65 1;
+#X connect 63 0 62 0;
+#X connect 64 0 62 0;
+#X connect 65 0 81 0;
+#X connect 66 0 61 0;
+#X connect 67 0 47 1;
+#X connect 68 0 48 1;
+#X connect 69 0 6 0;
+#X connect 71 0 14 0;
+#X connect 72 0 17 0;
+#X connect 73 0 10 0;
+#X connect 74 0 72 0;
+#X connect 74 0 58 0;
+#X connect 74 0 71 0;
+#X connect 74 0 73 0;
+#X connect 74 0 69 0;
+#X connect 77 0 36 0;
+#X connect 77 1 31 0;
+#X connect 77 2 32 0;
+#X connect 77 3 33 0;
+#X connect 79 0 78 0;
+#X connect 80 0 78 2;
+#X connect 84 0 83 2;
+#X connect 85 0 83 0;
+#X connect 86 0 30 0;

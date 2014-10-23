@@ -1,0 +1,331 @@
+#N canvas 295 25 834 713 16;
+#X text 281 -21 spines;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array sampler 297755 float 2;
+#X coords 0 1 297755 -1 200 140 1;
+#X restore 492 152 graph;
+#X obj 75 156 soundfiler;
+#X obj 75 94 openpanel;
+#X obj 75 69 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 75 125 read -resize \$1 sampler;
+#X floatatom 75 188 20 0 0 0 - - -;
+#X msg 61 21 read -resize /home/livre/pd-externals/a_patchs_doc/sample1.wav
+sampler;
+#N canvas 0 98 763 620 player 0;
+#X msg 79 368 0;
+#X msg 128 368 0.5;
+#X obj 168 455 dac~;
+#X obj 42 400 *~ 0.5;
+#X obj 40 59 bng 25 250 50 0 empty empty empty 0 -6 0 10 -258699 -1
+-1;
+#X obj 40 282 line~;
+#X obj 40 255 pack 0 0;
+#X obj 220 212 / 44.1;
+#X obj 40 218 f;
+#X obj 179 175 t f f;
+#X obj 40 92 t b b;
+#X msg 70 133 0;
+#X obj 41 309 +~ 1;
+#X obj 447 256 snapshot~;
+#X floatatom 448 285 20 0 0 0 - - -;
+#X obj 448 229 metro 1;
+#X obj 448 207 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 177 23 inlet;
+#X obj 47 13 inlet;
+#X obj 441 127 loadbang;
+#X obj 41 338 tabread4~ sampler;
+#X obj 449 352 /;
+#X msg 306 146 48;
+#X floatatom 448 397 5 0 0 0 - - -;
+#X obj 452 433 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 12700 1;
+#X obj 448 456 send posicao;
+#X obj 40 464 outlet~;
+#X obj 527 354 send samppos;
+#X obj 594 479 sel 1;
+#X obj 594 517 s stop_analise;
+#X obj 550 531 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X connect 0 0 3 1;
+#X connect 1 0 3 1;
+#X connect 3 0 2 0;
+#X connect 3 0 2 1;
+#X connect 3 0 26 0;
+#X connect 4 0 10 0;
+#X connect 5 0 12 0;
+#X connect 5 0 13 0;
+#X connect 6 0 5 0;
+#X connect 7 0 6 1;
+#X connect 8 0 6 0;
+#X connect 9 0 8 1;
+#X connect 9 1 7 0;
+#X connect 10 0 8 0;
+#X connect 10 1 11 0;
+#X connect 11 0 5 0;
+#X connect 12 0 20 0;
+#X connect 13 0 14 0;
+#X connect 14 0 21 0;
+#X connect 14 0 27 0;
+#X connect 15 0 13 0;
+#X connect 16 0 15 0;
+#X connect 17 0 4 0;
+#X connect 18 0 9 0;
+#X connect 18 0 21 1;
+#X connect 19 0 16 0;
+#X connect 20 0 3 0;
+#X connect 21 0 23 0;
+#X connect 22 0 7 1;
+#X connect 23 0 24 0;
+#X connect 24 0 25 0;
+#X connect 24 0 28 0;
+#X connect 28 0 29 0;
+#X connect 28 0 30 0;
+#X restore 202 230 pd player;
+#X obj 289 196 bng 15 250 50 0 empty empty toca 17 7 0 10 -262144 -1
+-1;
+#X obj 494 300 hsl 199 40 0 1 0 0 empty posicao empty -2 -8 0 10 -257985
+-1 -1 19800 1;
+#N canvas 0 0 1041 578 audioin 0;
+#X obj 29 23 inlet~;
+#X obj 128 22 inlet;
+#X text 537 45 1- entrada de audio;
+#X text 542 78 2 - volume do audio;
+#X text 560 109 de entrada;
+#X floatatom 28 243 5 0 0 0 - - -;
+#X floatatom 305 279 5 0 0 0 - - -;
+#X text 95 265 pitch;
+#X text 321 248 envelope;
+#X obj 28 210 sigmund~ -hop 4096 pitch env;
+#X obj 156 89 hsl 128 15 0 0.5 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 28 273 int;
+#X floatatom 28 306 5 0 0 0 - - -;
+#X obj 27 352 moses 0;
+#X floatatom 27 399 5 0 0 0 - - -;
+#X floatatom 94 400 5 0 0 0 - - -;
+#X obj 28 167 *~ 0.015;
+#X floatatom 304 384 5 0 0 0 - - -;
+#X floatatom 382 390 5 0 0 0 - - -;
+#X obj 305 330 moses 42;
+#X floatatom 381 286 5 0 0 0 - - -;
+#X text 411 354 com o volume de entrada;
+#X text 403 329 3 - calibrar o moses de acordo;
+#X obj 713 392 timer;
+#X obj 713 311 b;
+#X floatatom 713 418 5 0 0 0 - - -;
+#X obj 713 371 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 760 371 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 713 341 alternate;
+#X obj 713 255 bonk~;
+#X obj 713 284 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 713 453 send tempo;
+#X obj 833 454 send onset;
+#X obj 60 471 outlet;
+#X obj 259 454 outlet;
+#X obj 670 492 outlet;
+#X obj 829 499 outlet;
+#X obj 94 437 send nota;
+#X obj 382 428 send vol;
+#X obj 259 421 int;
+#X floatatom 340 512 5 0 0 0 - - -;
+#X connect 0 0 16 0;
+#X connect 1 0 16 1;
+#X connect 5 0 11 0;
+#X connect 6 0 19 0;
+#X connect 6 0 39 0;
+#X connect 9 0 5 0;
+#X connect 9 1 6 0;
+#X connect 10 0 16 1;
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;
+#X connect 13 1 15 0;
+#X connect 15 0 33 0;
+#X connect 15 0 37 0;
+#X connect 16 0 9 0;
+#X connect 16 0 29 0;
+#X connect 18 0 38 0;
+#X connect 19 0 17 0;
+#X connect 19 1 18 0;
+#X connect 20 0 19 1;
+#X connect 23 0 25 0;
+#X connect 24 0 28 0;
+#X connect 25 0 31 0;
+#X connect 25 0 35 0;
+#X connect 26 0 23 0;
+#X connect 27 0 23 1;
+#X connect 28 0 26 0;
+#X connect 28 1 27 0;
+#X connect 29 0 30 0;
+#X connect 29 0 32 0;
+#X connect 29 0 36 0;
+#X connect 30 0 24 0;
+#X connect 39 0 34 0;
+#X connect 39 0 40 0;
+#X restore 201 267 pd audioin;
+#X floatatom 201 302 5 0 0 1 pitch - -;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array pitch 69 float 3;
+#A 0 0 56 56 56 56 56 56 56 56 60 60 60 60 60 60 62 62 62 62 62 61
+62 36 64 64 63 63 63 63 63 67 67 67 67 66 47 51 72 72 71 72 71 71 71
+72 70 71 71 72 72 72 71 69 68 69 68 68 69 68 69 68 68 69 69 68 68 41
+57 68;
+#X coords 0 127 69 0 200 140 1;
+#X restore -64 232 graph;
+#X obj -66 459 tabread pitch;
+#X obj -63 378 hsl 199 40 0 1 0 0 empty empty empty -2 -8 0 10 -4034
+-1 -1 6000 1;
+#X obj -66 430 *;
+#X obj -66 495 nbx 5 50 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 40
+-262144 -1 -1 61 256;
+#N canvas 0 0 544 421 grava 0;
+#X obj -85 62 spigot;
+#X obj -58 119 counter;
+#X floatatom -59 146 5 0 0 0 - - -;
+#X msg -32 258 resize \$1;
+#X obj -32 204 + 1;
+#X obj -85 89 t f b;
+#X obj -58 174 t f f;
+#X obj -8 98 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj -195 208 tabwrite pitch;
+#X obj -32 285 send pitch;
+#X obj 184 141 f;
+#X obj 137 79 sel 0;
+#X obj 137 106 t b b;
+#X obj -32 231 spigot;
+#X obj 18 40 tgl 15 0 empty empty grava_pitch 17 7 0 10 -262144 -1
+-1 0 1;
+#X obj 18 68 t f f;
+#X obj -85 16 inlet;
+#X obj 184 173 outlet;
+#X obj 18 7 inlet;
+#X obj -74 338 outlet;
+#X connect 0 0 5 0;
+#X connect 1 0 2 0;
+#X connect 2 0 6 0;
+#X connect 2 0 10 1;
+#X connect 3 0 9 0;
+#X connect 4 0 13 0;
+#X connect 5 0 8 0;
+#X connect 5 1 1 0;
+#X connect 6 0 8 1;
+#X connect 6 1 4 0;
+#X connect 7 0 1 3;
+#X connect 10 0 17 0;
+#X connect 11 0 12 0;
+#X connect 12 0 7 0;
+#X connect 12 1 10 0;
+#X connect 13 0 3 0;
+#X connect 14 0 15 0;
+#X connect 14 0 11 0;
+#X connect 15 0 0 1;
+#X connect 15 1 13 1;
+#X connect 16 0 0 0;
+#X connect 18 0 14 0;
+#X restore 201 337 pd grava pitch;
+#X obj 314 306 tgl 15 0 empty grava gravar_pitch 17 7 0 10 -4034 -1
+-1 0 1;
+#X floatatom 531 462 5 0 0 1 amp - -;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array amp 266 float 1;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 4 42 46 46 45 43 42 42 42 22 42 37 34 31 30 29 28 20 46 42
+40 38 37 36 36 14 15 42 39 37 37 36 35 32 10 43 41 39 36 33 13 12 12
+38 39 36 34 31 29 27 25 11 40 36 33 20 40 37 35 20 40 36 33 29 28 26
+23 23 19 17 18 17 15 10 11 13 10 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0;
+#X coords 0 127 265 0 200 140 1;
+#X restore 266 392 graph;
+#X obj 267 538 hsl 199 40 0 1 0 0 empty empty empty -2 -8 0 10 -258113
+-1 -1 0 1;
+#X obj 264 590 *;
+#X obj 264 655 nbx 5 50 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 40
+-262144 -1 -1 0 256;
+#X obj 644 466 tgl 15 0 empty grava gravar_amp 17 7 0 10 -258113 -1
+-1 0 1;
+#X obj 264 619 tabread amp;
+#X obj 382 105 tgl 30 0 grava empty GRAVA 30 7 0 20 -262144 -1 -1 0
+1;
+#N canvas 0 0 544 421 grava 0;
+#X obj -85 62 spigot;
+#X obj -58 119 counter;
+#X floatatom -59 146 5 0 0 0 - - -;
+#X msg -32 258 resize \$1;
+#X obj -32 204 + 1;
+#X obj -85 89 t f b;
+#X obj -58 174 t f f;
+#X obj -8 98 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 184 141 f;
+#X obj 137 79 sel 0;
+#X obj 137 106 t b b;
+#X obj -32 231 spigot;
+#X obj 18 40 tgl 15 0 empty empty grava_amp 17 7 0 10 -262144 -1 -1
+0 1;
+#X obj 18 68 t f f;
+#X obj -85 16 inlet;
+#X obj 184 173 outlet;
+#X obj 18 7 inlet;
+#X obj -32 285 send amp;
+#X obj -195 208 tabwrite amp;
+#X connect 0 0 5 0;
+#X connect 1 0 2 0;
+#X connect 2 0 6 0;
+#X connect 2 0 8 1;
+#X connect 3 0 17 0;
+#X connect 4 0 11 0;
+#X connect 5 0 18 0;
+#X connect 5 1 1 0;
+#X connect 6 0 18 1;
+#X connect 6 1 4 0;
+#X connect 7 0 1 3;
+#X connect 8 0 15 0;
+#X connect 9 0 10 0;
+#X connect 10 0 7 0;
+#X connect 10 1 8 0;
+#X connect 11 0 3 0;
+#X connect 12 0 13 0;
+#X connect 12 0 9 0;
+#X connect 13 0 0 1;
+#X connect 13 1 11 1;
+#X connect 14 0 0 0;
+#X connect 16 0 12 0;
+#X restore 531 497 pd grava amp;
+#X obj -54 593 pitch;
+#X symbolatom -43 644 10 0 0 0 - - -;
+#X obj -59 561 + 1;
+#X connect 2 0 6 0;
+#X connect 3 0 5 0;
+#X connect 4 0 3 0;
+#X connect 5 0 2 0;
+#X connect 6 0 8 0;
+#X connect 7 0 2 0;
+#X connect 8 0 11 0;
+#X connect 9 0 8 1;
+#X connect 11 0 12 0;
+#X connect 11 1 20 0;
+#X connect 12 0 18 0;
+#X connect 14 0 17 0;
+#X connect 15 0 16 0;
+#X connect 16 0 14 0;
+#X connect 17 0 31 0;
+#X connect 18 1 16 1;
+#X connect 19 0 18 1;
+#X connect 20 0 28 0;
+#X connect 22 0 23 0;
+#X connect 23 0 26 0;
+#X connect 25 0 28 1;
+#X connect 26 0 24 0;
+#X connect 28 0 23 1;
+#X connect 29 1 30 0;
+#X connect 31 0 29 0;

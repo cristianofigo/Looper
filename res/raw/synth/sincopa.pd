@@ -1,0 +1,10 @@
+#N canvas 477 250 705 529 10;
+#X declare;
+#X declare;
+#X text 155 17 sincopa - meta;
+#X obj 37 80 sinc-audioanalise;
+#X obj 372 278 sinc-looper;
+#X obj 48 308 sinc-sample;
+#X obj 380 140 seq;
+#X obj 410 48 declare;
+#X obj 423 87 import;

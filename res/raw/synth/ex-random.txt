@@ -1,0 +1,58 @@
+
+pitch1: 98
+pitch2: 9
+pitch1: 78
+pitch2: 25
+pitch1: 20
+pitch2: 70
+pitch1: 85
+pitch2: 12
+pitch1: 3
+pitch2: 39
+pitch1: 5
+pitch2: 39
+pitch1: 0
+pitch2: 43
+seed: seed 50
+pitch1: 69
+pitch2: 69
+pitch1: 54
+pitch2: 54
+pitch1: 37
+pitch2: 37
+pitch1: 41
+pitch2: 41
+pitch1: 78
+pitch2: 78
+pitch1: 25
+pitch2: 25
+pitch1: 45
+pitch2: 45
+seed: seed 40
+pitch1: 59
+pitch2: 25
+pitch1: 65
+pitch2: 76
+pitch1: 92
+pitch2: 78
+pitch1: 82
+pitch2: 14
+seed: seed 20
+pitch1: 37
+pitch2: 39
+pitch1: 76
+pitch2: 88
+pitch1: 52
+pitch2: 2
+seed: seed 50
+pitch1: 69
+pitch2: 69
+pitch1: 54
+pitch2: 54
+pitch1: 37
+pitch2: 37
+pitch1: 41
+pitch2: 41
+pitch1: 78
+pitch2: 78
+

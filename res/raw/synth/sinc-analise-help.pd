@@ -1,0 +1,10 @@
+#N canvas 50 55 1141 453 10;
+#X text 705 282 Modo de usar:;
+#X text 706 299 1) clique em "abrir wav" \; 2) clique em "tocar" \;
+3) clique em "grava txt" \; 4) clique em "le txt" \; 5) clique em "rewind
+txt" \; 6) clique em "linha por linha" para visualizar \; a analise
+de cada trecho \;;
+#X obj 388 49 sinc-analise;
+#X text 386 262 [sinc-analise] abre arquivos de áudio \; e analisa
+as informações desses arquivos e \; coloca essas informações em um
+arquivo de texto.;

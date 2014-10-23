@@ -1,0 +1,18 @@
+#N canvas 38 26 382 297 10;
+#X obj 79 220 netsend 1;
+#X msg 79 57 connect localhost 3001;
+#X floatatom 91 120 0 0 0 0 - - -;
+#X floatatom 79 248 5 0 0 0 - - -;
+#X msg 91 147 send nota_entrada \$1;
+#X obj 91 92 receive nota_entrada;
+#X obj 245 129 receive nota_sistema;
+#X floatatom 245 149 5 0 0 0 - - -;
+#X msg 245 172 send nota_sistema \$1;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 2 0 4 0;
+#X connect 4 0 0 0;
+#X connect 5 0 2 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 0 0;

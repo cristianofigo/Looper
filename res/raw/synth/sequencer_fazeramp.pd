@@ -1,0 +1,566 @@
+#N canvas 439 24 617 641 12;
+#X obj 26 131 tgl 30 0 empty empty empty 17 7 0 10 -232576 -1 -1 0
+1;
+#X text 20 110 ON/OFF;
+#X obj 439 334 nbx 5 30 250 1000 0 0 empty empty empty 0 -8 0 15 -203904
+-1 -1 250 256;
+#X text 454 139 TEMPO;
+#X obj 441 163 nbx 5 30 250 1000 0 0 empty empty empty 0 -8 0 15 -203904
+-1 -1 250 256;
+#X text 454 304 TEMPO;
+#N canvas 193 96 616 487 Drum 0;
+#X obj 108 161 hradio 25 1 0 16 NADA NIENTE empty 0 -6 0 15 -87385
+-228395 -1 0;
+#X obj 113 142 tgl 15 1 NADA NIENTE empty 0 -6 0 10 -104946 -1 -1 1
+1;
+#X obj 139 142 tgl 15 1 NADA NIENTE empty 0 -6 0 10 -204800 -1 -1 0
+1;
+#X obj 164 142 tgl 15 1 NADA NIENTE empty 0 -6 0 10 -204800 -1 -1 0
+1;
+#X obj 187 142 tgl 15 0 NADA NIENTE empty 0 -6 0 10 -204800 -1 -1 0
+1;
+#X obj 238 142 tgl 15 1 NADA NIENTE empty 0 -6 0 10 -204800 -1 -1 0
+1;
+#X obj 263 142 tgl 15 1 NADA NIENTE empty 0 -6 0 10 -204800 -1 -1 0
+1;
+#X obj 288 142 tgl 15 0 NADA NIENTE empty 0 -6 0 10 -204800 -1 -1 0
+1;
+#X obj 339 142 tgl 15 1 NADA NIENTE empty 0 -6 0 10 -204800 -1 -1 1
+1;
+#X obj 364 142 tgl 15 1 NADA NIENTE empty 0 -6 0 10 -204800 -1 -1 0
+1;
+#X obj 387 142 tgl 15 1 NADA NIENTE empty 0 -6 0 10 -204800 -1 -1 1
+1;
+#X obj 438 142 tgl 15 1 NADA NIENTE empty 0 -6 0 10 -204800 -1 -1 0
+1;
+#X obj 464 142 tgl 15 1 NADA NIENTE empty 0 -6 0 10 -204800 -1 -1 1
+1;
+#X obj 488 142 tgl 15 1 NADA NIENTE empty 0 -6 0 10 -204800 -1 -1 0
+1;
+#N canvas 309 98 741 504 sequencer 0;
+#X obj 208 57 sel 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15;
+#X obj -12 17 inlet;
+#X obj 89 156 f;
+#X obj 104 133 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 1
+1;
+#X obj 122 156 f;
+#X obj 137 133 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0
+1;
+#X obj 158 156 f;
+#X obj 173 133 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0
+1;
+#X obj 191 156 f;
+#X obj 206 133 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0
+1;
+#X obj 225 156 f;
+#X obj 240 133 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 1
+1;
+#X obj 258 156 f;
+#X obj 273 133 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0
+1;
+#X obj 294 156 f;
+#X obj 309 133 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0
+1;
+#X obj 327 156 f;
+#X obj 342 133 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0
+1;
+#X obj 359 157 f;
+#X obj 374 134 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0
+1;
+#X obj 392 157 f;
+#X obj 407 134 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 1
+1;
+#X obj 428 157 f;
+#X obj 443 134 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0
+1;
+#X obj 461 157 f;
+#X obj 476 134 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 1
+1;
+#X obj 495 157 f;
+#X obj 510 134 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 1
+1;
+#X obj 528 157 f;
+#X obj 543 134 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0
+1;
+#X obj 564 157 f;
+#X obj 579 134 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 1
+1;
+#X obj 597 157 f;
+#X obj 612 134 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0
+1;
+#X obj 42 93 inlet;
+#X obj 82 93 inlet;
+#X obj 122 93 inlet;
+#X obj 162 93 inlet;
+#X obj 203 93 inlet;
+#X obj 243 93 inlet;
+#X obj 283 93 inlet;
+#X obj 323 93 inlet;
+#X obj 363 93 inlet;
+#X obj 403 93 inlet;
+#X obj 443 93 inlet;
+#X obj 483 93 inlet;
+#X obj 524 93 inlet;
+#X obj 564 93 inlet;
+#X obj 604 93 inlet;
+#X obj 644 93 inlet;
+#X obj 295 217 sel 1;
+#X floatatom 295 193 5 0 0 0 - - -;
+#X obj 295 241 bng 15 250 50 0 empty empty empty 0 -6 0 10 -262144
+-1 -1;
+#X obj 295 266 outlet;
+#X floatatom 113 49 5 0 0 0 - - -;
+#X text 140 430 Esse bang é que vai disparar o som de uma amostra de
+percussão.;
+#X text 29 16 Contador;
+#X text -17 93 Toggles;
+#X text 139 308 Cada toggle é armazenado em um [float]. Quando o contador
+envia números para o inlet mais à esquerda \, o objeto [select] dispara
+bangs para esses objetos [float]. Logo \, se um toggle foi acionado
+\, no momento em que o contador passa pelo número relacionado àquele
+toggle \, o objeto [float] cospe o valor 1 Por fim \, mais um objeto
+[select] envia um bang a cada vez que um [float] envia o número 1;
+#X connect 0 0 2 0;
+#X connect 0 1 4 0;
+#X connect 0 2 6 0;
+#X connect 0 3 8 0;
+#X connect 0 4 10 0;
+#X connect 0 5 12 0;
+#X connect 0 6 14 0;
+#X connect 0 7 16 0;
+#X connect 0 8 18 0;
+#X connect 0 9 20 0;
+#X connect 0 10 22 0;
+#X connect 0 11 24 0;
+#X connect 0 12 26 0;
+#X connect 0 13 28 0;
+#X connect 0 14 30 0;
+#X connect 0 15 32 0;
+#X connect 1 0 54 0;
+#X connect 2 0 51 0;
+#X connect 3 0 2 1;
+#X connect 4 0 51 0;
+#X connect 5 0 4 1;
+#X connect 6 0 51 0;
+#X connect 7 0 6 1;
+#X connect 8 0 51 0;
+#X connect 9 0 8 1;
+#X connect 10 0 51 0;
+#X connect 11 0 10 1;
+#X connect 12 0 51 0;
+#X connect 13 0 12 1;
+#X connect 14 0 51 0;
+#X connect 15 0 14 1;
+#X connect 16 0 51 0;
+#X connect 17 0 16 1;
+#X connect 18 0 51 0;
+#X connect 19 0 18 1;
+#X connect 20 0 51 0;
+#X connect 21 0 20 1;
+#X connect 22 0 51 0;
+#X connect 23 0 22 1;
+#X connect 24 0 51 0;
+#X connect 25 0 24 1;
+#X connect 26 0 51 0;
+#X connect 27 0 26 1;
+#X connect 28 0 51 0;
+#X connect 29 0 28 1;
+#X connect 30 0 51 0;
+#X connect 31 0 30 1;
+#X connect 32 0 51 0;
+#X connect 33 0 32 1;
+#X connect 34 0 3 0;
+#X connect 35 0 5 0;
+#X connect 36 0 7 0;
+#X connect 37 0 9 0;
+#X connect 38 0 11 0;
+#X connect 39 0 13 0;
+#X connect 40 0 15 0;
+#X connect 41 0 17 0;
+#X connect 42 0 19 0;
+#X connect 43 0 21 0;
+#X connect 44 0 23 0;
+#X connect 45 0 25 0;
+#X connect 46 0 27 0;
+#X connect 47 0 29 0;
+#X connect 48 0 31 0;
+#X connect 49 0 33 0;
+#X connect 50 0 52 0;
+#X connect 51 0 50 0;
+#X connect 52 0 53 0;
+#X connect 54 0 0 0;
+#X restore 112 214 pd sequencer -----------------------------------------------
+;
+#X obj 313 142 tgl 15 1 NADA NIENTE empty 0 -6 0 10 -104946 -1 -1 0
+1;
+#X obj 213 142 tgl 15 1 NADA NIENTE empty 0 -6 0 10 -104946 -1 -1 1
+1;
+#X obj 414 142 tgl 15 1 NADA NIENTE empty 0 -6 0 10 -104946 -1 -1 1
+1;
+#X obj 112 238 outlet;
+#X obj 40 -66 cnv 15 170 80 empty empty empty 20 12 0 14 -203890 -66577
+0;
+#X obj 97 15 cnv 15 80 60 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 108 24 f;
+#X obj 141 28 + 1;
+#X obj 108 -35 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0
+1;
+#X floatatom 168 -36 5 0 0 0 - - -;
+#X obj 108 51 mod 16;
+#X obj 168 -63 inlet;
+#X obj 108 -63 inlet;
+#X obj 108 -13 metro 250;
+#X obj 47 -13 moses 1;
+#X text 183 38 Contador em sequência de 0 a 15;
+#X text 109 -86 on/off;
+#X text 169 -86 tempo;
+#X text 217 -48 Metrônomo: O [moses] zera o contador quando o toggle
+é zerado.;
+#X text 131 274 O GUI horizontal radio é apenas um display dos números
+do contador. Os toggles representam onde \, no tempo \, os samples
+devem ser tocados. Cada toggle pode ser pensado como uma semicolcheia
+de um compasso 4/4. Abra o Subpatch [pd sequencer] para entender o
+código.;
+#X connect 0 0 14 0;
+#X connect 1 0 14 1;
+#X connect 2 0 14 2;
+#X connect 3 0 14 3;
+#X connect 4 0 14 4;
+#X connect 5 0 14 6;
+#X connect 6 0 14 7;
+#X connect 7 0 14 8;
+#X connect 8 0 14 10;
+#X connect 9 0 14 11;
+#X connect 10 0 14 12;
+#X connect 11 0 14 14;
+#X connect 12 0 14 15;
+#X connect 13 0 14 16;
+#X connect 14 0 18 0;
+#X connect 15 0 14 9;
+#X connect 16 0 14 5;
+#X connect 17 0 14 13;
+#X connect 21 0 22 0;
+#X connect 21 0 25 0;
+#X connect 22 0 21 1;
+#X connect 23 0 28 0;
+#X connect 23 0 29 0;
+#X connect 24 0 28 1;
+#X connect 25 0 0 0;
+#X connect 26 0 24 0;
+#X connect 27 0 23 0;
+#X connect 28 0 21 0;
+#X connect 29 0 21 1;
+#X coords 0 -1 1 1 418 100 1 100 100;
+#X restore 28 371 pd Drum Sequencer;
+#X obj 496 476 loadbang;
+#X msg 496 499 \; pd dsp 1;
+#X obj 21 17 cnv 15 315 40 empty empty Drum_Machine: 20 12 0 24 -262144
+-66577 0;
+#N canvas 193 96 616 487 Drum 0;
+#X obj 108 161 hradio 25 1 0 16 NADA NIENTE empty 0 -6 0 15 -87385
+-228395 -1 0;
+#X obj 113 142 tgl 15 1 NADA NIENTE empty 0 -6 0 10 -104946 -1 -1 0
+1;
+#X obj 139 142 tgl 15 1 NADA NIENTE empty 0 -6 0 10 -204800 -1 -1 0
+1;
+#X obj 164 142 tgl 15 1 NADA NIENTE empty 0 -6 0 10 -204800 -1 -1 1
+1;
+#X obj 187 142 tgl 15 0 NADA NIENTE empty 0 -6 0 10 -204800 -1 -1 0
+1;
+#X obj 238 142 tgl 15 1 NADA NIENTE empty 0 -6 0 10 -204800 -1 -1 1
+1;
+#X obj 263 142 tgl 15 1 NADA NIENTE empty 0 -6 0 10 -204800 -1 -1 1
+1;
+#X obj 288 142 tgl 15 0 NADA NIENTE empty 0 -6 0 10 -204800 -1 -1 0
+1;
+#X obj 339 142 tgl 15 1 NADA NIENTE empty 0 -6 0 10 -204800 -1 -1 0
+1;
+#X obj 364 142 tgl 15 1 NADA NIENTE empty 0 -6 0 10 -204800 -1 -1 1
+1;
+#X obj 387 142 tgl 15 1 NADA NIENTE empty 0 -6 0 10 -204800 -1 -1 0
+1;
+#X obj 438 142 tgl 15 1 NADA NIENTE empty 0 -6 0 10 -204800 -1 -1 1
+1;
+#X obj 464 142 tgl 15 1 NADA NIENTE empty 0 -6 0 10 -204800 -1 -1 0
+1;
+#X obj 488 142 tgl 15 1 NADA NIENTE empty 0 -6 0 10 -204800 -1 -1 1
+1;
+#N canvas 309 98 741 504 sequencer 0;
+#X obj 208 57 sel 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15;
+#X obj -12 17 inlet;
+#X obj 89 156 f;
+#X obj 104 133 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0
+1;
+#X obj 122 156 f;
+#X obj 137 133 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0
+1;
+#X obj 158 156 f;
+#X obj 173 133 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 1
+1;
+#X obj 191 156 f;
+#X obj 206 133 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0
+1;
+#X obj 225 156 f;
+#X obj 240 133 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0
+1;
+#X obj 258 156 f;
+#X obj 273 133 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 1
+1;
+#X obj 294 156 f;
+#X obj 309 133 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 1
+1;
+#X obj 327 156 f;
+#X obj 342 133 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0
+1;
+#X obj 359 157 f;
+#X obj 374 134 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 1
+1;
+#X obj 392 157 f;
+#X obj 407 134 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0
+1;
+#X obj 428 157 f;
+#X obj 443 134 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 1
+1;
+#X obj 461 157 f;
+#X obj 476 134 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0
+1;
+#X obj 495 157 f;
+#X obj 510 134 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0
+1;
+#X obj 528 157 f;
+#X obj 543 134 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 1
+1;
+#X obj 564 157 f;
+#X obj 579 134 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0
+1;
+#X obj 597 157 f;
+#X obj 612 134 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 1
+1;
+#X obj 42 93 inlet;
+#X obj 82 93 inlet;
+#X obj 122 93 inlet;
+#X obj 162 93 inlet;
+#X obj 203 93 inlet;
+#X obj 243 93 inlet;
+#X obj 283 93 inlet;
+#X obj 323 93 inlet;
+#X obj 363 93 inlet;
+#X obj 403 93 inlet;
+#X obj 443 93 inlet;
+#X obj 483 93 inlet;
+#X obj 524 93 inlet;
+#X obj 564 93 inlet;
+#X obj 604 93 inlet;
+#X obj 644 93 inlet;
+#X obj 295 217 sel 1;
+#X floatatom 295 193 5 0 0 0 - - -;
+#X obj 295 241 bng 15 250 50 0 empty empty empty 0 -6 0 10 -262144
+-1 -1;
+#X obj 295 266 outlet;
+#X floatatom 113 49 5 0 0 0 - - -;
+#X text 140 430 Esse bang é que vai disparar o som de uma amostra de
+percussão.;
+#X text 29 16 Contador;
+#X text -17 93 Toggles;
+#X text 140 310 Cada toggle é armazenado em um [float]. Quando o contador
+envia números para o inlet mais à esquerda \, o objeto [select] dispara
+bangs para esses objetos [float]. Logo \, se um toggle foi acionado
+\, no momento em que o contador passa pelo número relacionado àquele
+toggle \, o objeto [float] cospe o valor 1 Por fim \, mais um objeto
+[select] envia um bang a cada vez que um [float] envia o número 1;
+#X connect 0 0 2 0;
+#X connect 0 1 4 0;
+#X connect 0 2 6 0;
+#X connect 0 3 8 0;
+#X connect 0 4 10 0;
+#X connect 0 5 12 0;
+#X connect 0 6 14 0;
+#X connect 0 7 16 0;
+#X connect 0 8 18 0;
+#X connect 0 9 20 0;
+#X connect 0 10 22 0;
+#X connect 0 11 24 0;
+#X connect 0 12 26 0;
+#X connect 0 13 28 0;
+#X connect 0 14 30 0;
+#X connect 0 15 32 0;
+#X connect 1 0 54 0;
+#X connect 2 0 51 0;
+#X connect 3 0 2 1;
+#X connect 4 0 51 0;
+#X connect 5 0 4 1;
+#X connect 6 0 51 0;
+#X connect 7 0 6 1;
+#X connect 8 0 51 0;
+#X connect 9 0 8 1;
+#X connect 10 0 51 0;
+#X connect 11 0 10 1;
+#X connect 12 0 51 0;
+#X connect 13 0 12 1;
+#X connect 14 0 51 0;
+#X connect 15 0 14 1;
+#X connect 16 0 51 0;
+#X connect 17 0 16 1;
+#X connect 18 0 51 0;
+#X connect 19 0 18 1;
+#X connect 20 0 51 0;
+#X connect 21 0 20 1;
+#X connect 22 0 51 0;
+#X connect 23 0 22 1;
+#X connect 24 0 51 0;
+#X connect 25 0 24 1;
+#X connect 26 0 51 0;
+#X connect 27 0 26 1;
+#X connect 28 0 51 0;
+#X connect 29 0 28 1;
+#X connect 30 0 51 0;
+#X connect 31 0 30 1;
+#X connect 32 0 51 0;
+#X connect 33 0 32 1;
+#X connect 34 0 3 0;
+#X connect 35 0 5 0;
+#X connect 36 0 7 0;
+#X connect 37 0 9 0;
+#X connect 38 0 11 0;
+#X connect 39 0 13 0;
+#X connect 40 0 15 0;
+#X connect 41 0 17 0;
+#X connect 42 0 19 0;
+#X connect 43 0 21 0;
+#X connect 44 0 23 0;
+#X connect 45 0 25 0;
+#X connect 46 0 27 0;
+#X connect 47 0 29 0;
+#X connect 48 0 31 0;
+#X connect 49 0 33 0;
+#X connect 50 0 52 0;
+#X connect 51 0 50 0;
+#X connect 52 0 53 0;
+#X connect 54 0 0 0;
+#X restore 112 214 pd sequencer -----------------------------------------------
+;
+#X obj 313 142 tgl 15 1 NADA NIENTE empty 0 -6 0 10 -104946 -1 -1 1
+1;
+#X obj 213 142 tgl 15 1 NADA NIENTE empty 0 -6 0 10 -104946 -1 -1 0
+1;
+#X obj 414 142 tgl 15 1 NADA NIENTE empty 0 -6 0 10 -104946 -1 -1 0
+1;
+#X obj 112 238 outlet;
+#X obj 40 -66 cnv 15 170 80 empty empty empty 20 12 0 14 -203890 -66577
+0;
+#X obj 97 15 cnv 15 80 60 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 108 25 f;
+#X obj 141 29 + 1;
+#X obj 108 -35 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0
+1;
+#X floatatom 168 -36 5 0 0 0 - - -;
+#X obj 108 50 mod 16;
+#X obj 168 -63 inlet;
+#X obj 108 -63 inlet;
+#X obj 108 -13 metro 250;
+#X obj 47 -13 moses 1;
+#X text 183 37 Contador em sequência de 0 a 15;
+#X text 109 -86 on/off;
+#X text 169 -86 tempo;
+#X text 217 -49 Metrônomo: O [moses] zera o contador quando o toggle
+é zerado.;
+#X text 132 273 O GUI horizontal radio é apenas um display dos números
+do contador. Os toggles representam onde \, no tempo \, os samples
+devem ser tocados. Cada toggle pode ser pensado como uma semicolcheia
+de um compasso 4/4. Abra o Subpatch [pd sequencer] para entender o
+código.;
+#X connect 0 0 14 0;
+#X connect 1 0 14 1;
+#X connect 2 0 14 2;
+#X connect 3 0 14 3;
+#X connect 4 0 14 4;
+#X connect 5 0 14 6;
+#X connect 6 0 14 7;
+#X connect 7 0 14 8;
+#X connect 8 0 14 10;
+#X connect 9 0 14 11;
+#X connect 10 0 14 12;
+#X connect 11 0 14 14;
+#X connect 12 0 14 15;
+#X connect 13 0 14 16;
+#X connect 14 0 18 0;
+#X connect 15 0 14 9;
+#X connect 16 0 14 5;
+#X connect 17 0 14 13;
+#X connect 21 0 22 0;
+#X connect 21 0 25 0;
+#X connect 22 0 21 1;
+#X connect 23 0 28 0;
+#X connect 23 0 29 0;
+#X connect 24 0 28 1;
+#X connect 25 0 0 0;
+#X connect 26 0 24 0;
+#X connect 27 0 23 0;
+#X connect 28 0 21 0;
+#X connect 29 0 21 1;
+#X coords 0 -1 1 1 418 100 1 100 100;
+#X restore 30 198 pd Drum Sequencer;
+#N canvas 513 59 520 305 sample1 0;
+#X msg 40 147 1;
+#X obj 61 212 dac~;
+#X obj 72 177 readsf~;
+#X obj 42 117 t b b;
+#X obj 42 39 inlet;
+#X obj 42 76 bng 15 250 50 0 empty empty empty 17 7 0 10 -220522 -1
+-1;
+#X text 141 214 A cada bang do sequencer \, tocamos um sample.;
+#X msg 73 148 open drum/DHOLAK01.aif;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 2 0 1 1;
+#X connect 3 0 0 0;
+#X connect 3 1 7 0;
+#X connect 4 0 5 0;
+#X connect 5 0 3 0;
+#X connect 7 0 2 0;
+#X restore 30 307 pd sample1;
+#N canvas 113 50 559 208 sample2 0;
+#X msg 39 73 1;
+#X obj 63 135 dac~;
+#X obj 75 100 readsf~;
+#X obj 39 43 t b b;
+#X obj 39 -13 inlet;
+#X obj 39 19 bng 15 250 50 0 empty empty empty 17 7 0 10 -262130 -1
+-1;
+#X text 163 119 A cada bang do sequencer \, tocamos um sample.;
+#X msg 72 74 open drum/BAGAL4.aif;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 2 0 1 1;
+#X connect 3 0 0 0;
+#X connect 3 1 7 0;
+#X connect 4 0 5 0;
+#X connect 5 0 3 0;
+#X connect 7 0 2 0;
+#X restore 28 480 pd sample2;
+#X text 99 74 Aqui temos um sequencer que dispara arquivos de som.
+Os dois subpatches são iguais. Abra-os para entender como esses sequencers
+controlam o disparo de arquivos de som de percussão.;
+#X text 38 518 A possibilidade de programar nos permite criar coisas
+bem inusitadas e diferentes no Puredata. Estes exemplos são comuns
+e simples. Em todo o caso \, veja que já é possível colocar cada sequencer
+em um tempo independente do outro \, o que é bem raro em programas
+de sequencers por aí. Isso já é um exemplo interessante da liberdade
+que o Pd nos permite.;
+#X obj 111 142 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 503 119 r tempo_global;
+#X obj 33 65 r global_on;
+#X connect 0 0 6 0;
+#X connect 0 0 10 0;
+#X connect 2 0 6 1;
+#X connect 4 0 10 1;
+#X connect 6 0 12 0;
+#X connect 7 0 8 0;
+#X connect 10 0 11 0;
+#X connect 15 0 10 0;
+#X connect 16 0 4 0;
+#X connect 16 0 2 0;
+#X connect 17 0 0 0;

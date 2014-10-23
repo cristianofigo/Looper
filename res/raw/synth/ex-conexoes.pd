@@ -1,0 +1,24 @@
+#N canvas 314 142 750 369 10;
+#X obj 188 39 sinc-audioanalise;
+#X obj 167 7 adc~;
+#X floatatom 296 201 5 0 0 0 - - -;
+#X obj 152 249 t f b;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array array1 7 float 3;
+#A 0 33 33 21 33 21 33 21;
+#X coords 0 127 7 0 200 140 1;
+#X restore 483 166 graph;
+#X obj 152 311 tabwrite array1;
+#X obj 296 234 send pitch;
+#X obj 484 18 receive pitch;
+#X obj 484 62 nbx 3 60 -1e+37 1e+37 0 0 empty empty empty 0 -8 2 45
+-262144 -1 -1 21 256;
+#X obj 239 286 counter 7;
+#X connect 0 4 2 0;
+#X connect 1 1 0 0;
+#X connect 2 0 3 0;
+#X connect 2 0 6 0;
+#X connect 3 0 5 0;
+#X connect 3 1 9 0;
+#X connect 7 0 8 0;
+#X connect 9 0 5 1;
