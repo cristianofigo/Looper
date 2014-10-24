@@ -267,13 +267,100 @@ public class LoopActivity extends PApplet {
 	  
 	  cp5.addToggle("ligafx2")
 	     .setValue(0)
-	     .setPosition(width*0.25f,height*0.15f)
+	     .setPosition(width*0.4f,height*0.15f)
 	     .setSize(((int)(width*0.1f)), ((int)(width*0.1f)))
 	     ;
+	  
+	  cp5.addSlider("volfx1")
+	     .setPosition(width*.1f,height*.4f)
+	     .setRange(0,1)
+	     .setSize(((int)(width*0.07f)),((int)(height*0.5f)))
+	     .setValue(1)
+	     .setScrollSensitivity(1.0f)
+	     ;
+	  
+	  cp5.addSlider("delayfx1")
+	     .setPosition(width*.2f,height*.4f)
+	     .setRange(0,1)
+	     .setSize(((int)(width*0.07f)),((int)(height*0.5f)))
+	     .setValue(1)
+	     .setScrollSensitivity(1.0f)
+	     ;
+	  
+	  cp5.addSlider("feedfx1")
+	     .setPosition(width*.3f,height*.4f)
+	     .setRange(0,1)
+	     .setSize(((int)(width*0.07f)),((int)(height*0.5f)))
+	     .setValue(1)
+	     .setScrollSensitivity(1.0f)
+	     ;
+	  
+	  cp5.addSlider("volfx2")
+	     .setPosition(width*.4f,height*.4f)
+	     .setRange(0,1)
+	     .setSize(((int)(width*0.07f)),((int)(height*0.5f)))
+	     .setValue(1)
+	     .setScrollSensitivity(1.0f)
+	     ;
+	  
+	  cp5.addSlider("delayfx2")
+	     .setPosition(width*.5f,height*.4f)
+	     .setRange(0,1)
+	     .setSize(((int)(width*0.07f)),((int)(height*0.5f)))
+	     .setValue(1)
+	     .setScrollSensitivity(1.0f)
+	     ;
+	  
+	  cp5.addSlider("feedfx2")
+	     .setPosition(width*.6f,height*.4f)
+	     .setRange(0,1)
+	     .setSize(((int)(width*0.07f)),((int)(height*0.5f)))
+	     .setValue(1)
+	     .setScrollSensitivity(1.0f)
+	     ;
+  
+	  ///rec
+	  
+	  cp5.addToggle("recgeral1")
+	     .setValue(0)
+	     .setPosition(width*0.1f,height*0.15f)
+	     .setSize(((int)(width*0.1f)), ((int)(width*0.1f)))
+	     ;
+	  
+	  cp5.addToggle("play1")
+	     .setValue(0)
+	     .setPosition(width*0.4f,height*0.15f)
+	     .setSize(((int)(width*0.1f)), ((int)(width*0.1f)))
+	     ;
+	  
+	  cp5.addSlider("playvolume1")
+	     .setPosition(width*.4f,height*.4f)
+	     .setRange(0,1)
+	     .setSize(((int)(width*0.1f)),((int)(height*0.5f)))
+	     .setValue(1)
+	     .setScrollSensitivity(1.0f)
+	     ;
+	  
+//	  cp5.addSlider("vol4")
+//	     .setPosition(width*.55f,height*.4f)
+//	     .setRange(0,1)
+//	     .setSize(((int)(width*0.1f)),((int)(height*0.5f)))
+//	     .setValue(1)
+//	     .setScrollSensitivity(1.0f)
+//	     ;
 	     
 	  
 	  cp5.getController("ligafx1").moveTo("Fx");
 	  cp5.getController("ligafx2").moveTo("Fx");
+	  cp5.getController("volfx1").moveTo("Fx");
+	  cp5.getController("delayfx1").moveTo("Fx");
+	  cp5.getController("feedfx1").moveTo("Fx");
+	  cp5.getController("volfx2").moveTo("Fx");
+	  cp5.getController("delayfx2").moveTo("Fx");
+	  cp5.getController("feedfx2").moveTo("Fx");
+	  cp5.getController("recgeral1").moveTo("Rec");
+	  cp5.getController("play1").moveTo("Rec");
+	  cp5.getController("playvolume1").moveTo("Rec");
 //	  cp5.getController("Canal2").moveTo("Loops");
 //	  cp5.getController("Vol2").moveTo("Loops");
 //	  cp5.getController("Canal3").moveTo("Loops");
@@ -330,16 +417,27 @@ public class LoopActivity extends PApplet {
 		
 		PdBase.sendFloat("ligafx1", cp5.getValue("ligafx1"));
 		PdBase.sendFloat("ligafx2", cp5.getValue("ligafx2"));
+		PdBase.sendFloat("volfx1", cp5.getValue("volfx1"));
+		PdBase.sendFloat("delayfx1", cp5.getValue("delayfx1"));
+		PdBase.sendFloat("feedfx1", cp5.getValue("feedfx1"));
+		PdBase.sendFloat("volfx2", cp5.getValue("volfx2"));
+		PdBase.sendFloat("delayfx2", cp5.getValue("delayfx2"));
+		PdBase.sendFloat("feedfx2", cp5.getValue("feedfx2"));
+		PdBase.sendFloat("recgeral1", cp5.getValue("recgeral1"));
+		PdBase.sendFloat("play1", cp5.getValue("play1"));
+		PdBase.sendFloat("playvolume1", cp5.getValue("playvolume1"));
+		
+		comecaGrabacao();
 		
 	}
 	
 public void comecaGrabacao() {
     prepareRecord();
-    PdBase.sendFloat("pd_record", 1);
+    
 }
 
 public void terminaGrabacao () {
-    PdBase.sendFloat("pd_record", 0);
+    
 }
 
 
@@ -373,6 +471,7 @@ private void prepareRecord() {
   //  PdBase.sendSymbol("pd_path", myDir + "/" + fname);
     PdBase.sendSymbol("pd_path", myDir + "/");
 }
+
 	
 
 	
