@@ -99,8 +99,9 @@ public class LoopActivity extends PApplet {
 
 		pdService.initAudio(sampleRate, 1, 2, 30.0f);
 		
+		//definir icone e texto "sample"..etc..
 		pdService.startAudio(new Intent(this, LoopActivity.class),
-				R.drawable.icon, "Sample", "Return to Processing");
+				R.drawable.ic_launcher, "Sample", "Return to Processing");
 
 		dispatcher = new PdUiDispatcher();
 		PdBase.setReceiver(dispatcher);
@@ -188,12 +189,80 @@ public class LoopActivity extends PApplet {
 	     .setPosition(width*0.1f,height*0.15f)
 	     .setSize(((int)(width*0.1f)), ((int)(width*0.1f)))
 	     ;
+	  //texto
+	  cp5.addTextlabel("clique")
+      .setText("clique")
+      .setPosition(width*0.0f,height*0.1f)
+      .setColor(0)
+      .setFont(createFont("Georgia",(int)(width*0.03f)))
+      ;
+	  cp5.addTextlabel("apenas")
+      .setText("apenas")
+      .setPosition(width*0.0f,height*0.15f)
+      .setColor(0)
+      .setFont(createFont("Georgia",(int)(width*0.028f)))
+      ;
+	  cp5.addTextlabel("uma")
+      .setText("uma")
+      .setPosition(width*0.0f,height*0.2f)
+      .setColor(0)
+      .setFont(createFont("Georgia",(int)(width*0.03f)))
+      ;
+	  cp5.addTextlabel("vez")
+      .setText("vez ->")
+      .setPosition(width*0.0f,height*0.25f)
+      .setColor(0)
+      .setFont(createFont("Georgia",(int)(width*0.03f)))
+      ;
+	  cp5.addTextlabel("para")
+      .setText("para")
+      .setPosition(width*0.0f,height*0.3f)
+      .setColor(0)
+      .setFont(createFont("Georgia",(int)(width*0.03f)))
+      ;
+	  cp5.addTextlabel("gravar")
+      .setText("gravar")
+      .setPosition(width*0.0f,height*0.35f)
+      .setColor(0)
+      .setFont(createFont("Georgia",(int)(width*0.03f)))
+      ;
+	  
+	  cp5.addTextlabel("volume")
+      .setText("volume")
+      .setPosition(width*0.0f,height*0.7f)
+      .setColor(0)
+      .setFont(createFont("Georgia",(int)(width*0.025f)))
+      ;
+	  
+	  cp5.addTextlabel("bpm")
+      .setText("BPM")
+      .setPosition(width*0.86f,height*0.28f)
+      .setColor(0)
+      .setFont(createFont("Georgia",(int)(width*0.028f)))
+      ;
+	  
+	  
+	  cp5.addTextlabel("volumegeral")
+      .setText("volume")
+      .setPosition(width*0.86f,height*0.7f)
+      .setColor(0)
+      .setFont(createFont("Georgia",(int)(width*0.028f)))
+      ;
+	  cp5.addTextlabel("vol_geral")
+      .setText("geral")
+      .setPosition(width*0.86f,height*0.75f)
+      .setColor(0)
+      .setFont(createFont("Georgia",(int)(width*0.028f)))
+      ;
 	  //rec2
 	  cp5.addButton("Canal2")
 	     .setValue(0)
 	     .setPosition(width*0.25f,height*0.15f)
 	     .setSize(((int)(width*0.1f)), ((int)(width*0.1f)))
 	     ;
+	  
+	  
+	  
 	  //rec3
 	  cp5.addButton("Canal3")
 	     .setValue(0)
@@ -259,6 +328,80 @@ public class LoopActivity extends PApplet {
 	  
 	  //// fx
 	  
+//texto
+	  
+	  cp5.addTextlabel("cliquefx")
+      .setText("clique")
+      .setPosition(width*0.0f,height*0.15f)
+      .setColor(0)
+      .setFont(createFont("Georgia",(int)(width*0.028f)))
+      ;
+	  cp5.addTextlabel("parafx")
+      .setText("para")
+      .setPosition(width*0.0f,height*0.2f)
+      .setColor(0)
+      .setFont(createFont("Georgia",(int)(width*0.028f)))
+      ;
+	  cp5.addTextlabel("ligar")
+      .setText("ligar ->")
+      .setPosition(width*0.0f,height*0.25f)
+      .setColor(0)
+      .setFont(createFont("Georgia",(int)(width*0.028f)))
+      ;
+	  cp5.addTextlabel("efeitos")
+      .setText("efeitos")
+      .setPosition(width*0.0f,height*0.3f)
+      .setColor(0)
+      .setFont(createFont("Georgia",(int)(width*0.028f)))
+      ;
+	  cp5.addTextlabel("delay")
+      .setText("delay")
+      .setPosition(width*0.2f,height*0.15f)
+      .setColor(0)
+      .setFont(createFont("Georgia",(int)(width*0.028f)))
+      ;
+	  cp5.addTextlabel("delayspec")
+      .setText("delay spectral")
+      .setPosition(width*0.5f,height*0.15f)
+      .setColor(0)
+      .setFont(createFont("Georgia",(int)(width*0.028f)))
+      ;
+	  cp5.addTextlabel("vol_delay")
+      .setText("vol")
+      .setPosition(width*0.1f,height*0.93f)
+      .setColor(0)
+      .setFont(createFont("Georgia",(int)(width*0.028f)))
+      ;
+	  cp5.addTextlabel("tempo_delay")
+      .setText("tempo")
+      .setPosition(width*0.18f,height*0.93f)
+      .setColor(0)
+      .setFont(createFont("Georgia",(int)(width*0.028f)))
+      ;
+	  cp5.addTextlabel("feed_delay")
+      .setText("feedback")
+      .setPosition(width*0.29f,height*0.93f)
+      .setColor(0)
+      .setFont(createFont("Georgia",(int)(width*0.028f)))
+      ;
+	  cp5.addTextlabel("vol_delayspec")
+      .setText("vol")
+      .setPosition(width*0.42f,height*0.93f)
+      .setColor(0)
+      .setFont(createFont("Georgia",(int)(width*0.028f)))
+      ;
+	  cp5.addTextlabel("tempo_delayspec")
+      .setText("tempo")
+      .setPosition(width*0.5f,height*0.93f)
+      .setColor(0)
+      .setFont(createFont("Georgia",(int)(width*0.028f)))
+      ;
+	  cp5.addTextlabel("feed_delayspec")
+      .setText("feedback")
+      .setPosition(width*0.6f,height*0.93f)
+      .setColor(0)
+      .setFont(createFont("Georgia",(int)(width*0.028f)))
+      ;
 	  cp5.addToggle("ligafx1")
 	     .setValue(0)
 	     .setPosition(width*0.1f,height*0.15f)
@@ -321,6 +464,44 @@ public class LoopActivity extends PApplet {
   
 	  ///rec
 	  
+	  cp5.addTextlabel("cliquerec")
+      .setText("clique")
+      .setPosition(width*0.0f,height*0.15f)
+      .setColor(0)
+      .setFont(createFont("Georgia",(int)(width*0.028f)))
+      ;
+	  cp5.addTextlabel("pararec")
+      .setText("para")
+      .setPosition(width*0.0f,height*0.2f)
+      .setColor(0)
+      .setFont(createFont("Georgia",(int)(width*0.028f)))
+      ;
+	  cp5.addTextlabel("gravarrec")
+      .setText("gravar->")
+      .setPosition(width*0.0f,height*0.25f)
+      .setColor(0)
+      .setFont(createFont("Georgia",(int)(width*0.025f)))
+      ;
+	  
+	  cp5.addTextlabel("cliqueplay")
+      .setText("clique")
+      .setPosition(width*0.27f,height*0.15f)
+      .setColor(0)
+      .setFont(createFont("Georgia",(int)(width*0.028f)))
+      ;
+	  cp5.addTextlabel("paraplay")
+      .setText("para")
+      .setPosition(width*0.27f,height*0.2f)
+      .setColor(0)
+      .setFont(createFont("Georgia",(int)(width*0.028f)))
+      ;
+	  cp5.addTextlabel("tocar")
+      .setText("tocar ->")
+      .setPosition(width*0.27f,height*0.25f)
+      .setColor(0)
+      .setFont(createFont("Georgia",(int)(width*0.028f)))
+      ;
+	  
 	  cp5.addToggle("recgeral1")
 	     .setValue(0)
 	     .setPosition(width*0.1f,height*0.15f)
@@ -341,6 +522,41 @@ public class LoopActivity extends PApplet {
 	     .setScrollSensitivity(1.0f)
 	     ;
 	  
+	  // about
+	  
+	  cp5.addTextlabel("label")
+      .setText("Looper permite que você grave 4 canais de áudio e aplique,")
+      .setPosition(width*0.1f,height*0.5f)
+      .setColor(0)
+      .setFont(createFont("Georgia",20))
+      ;
+cp5.addTextlabel("label2")
+.setText("efeitos de delay e delay spectral em cada canal.")
+.setPosition(width*0.1f,height*0.55f)
+.setColor(0)
+.setFont(createFont("Georgia",20))
+;
+
+cp5.addTextlabel("label3")
+.setText("Grave 4 canais na aba LOOPS")
+.setPosition(width*0.1f,height*0.65f)
+.setColor(0)
+.setFont(createFont("Georgia",20))
+;
+cp5.addTextlabel("label4")
+.setText("Modifique os efeitos de cada canal na aba FX")
+.setPosition(width*0.1f,height*0.75f)
+.setColor(0)
+.setFont(createFont("Georgia",20))
+;
+cp5.addTextlabel("label5")
+.setText("Música Móvel - figocris@gmail.com")
+.setPosition(width*0.1f,height*0.85f)
+.setColor(0)
+.setFont(createFont("Georgia",20))
+;
+
+	  
 //	  cp5.addSlider("vol4")
 //	     .setPosition(width*.55f,height*.4f)
 //	     .setRange(0,1)
@@ -349,7 +565,20 @@ public class LoopActivity extends PApplet {
 //	     .setScrollSensitivity(1.0f)
 //	     ;
 	     
-	  
+	  //texto
+cp5.getController("cliquefx").moveTo("Fx");
+cp5.getController("parafx").moveTo("Fx");
+cp5.getController("ligar").moveTo("Fx");
+cp5.getController("efeitos").moveTo("Fx");
+cp5.getController("delay").moveTo("Fx");
+cp5.getController("delayspec").moveTo("Fx");
+cp5.getController("vol_delay").moveTo("Fx");
+cp5.getController("tempo_delay").moveTo("Fx");
+cp5.getController("feed_delay").moveTo("Fx");
+cp5.getController("vol_delayspec").moveTo("Fx");
+cp5.getController("tempo_delayspec").moveTo("Fx");
+cp5.getController("feed_delayspec").moveTo("Fx");
+//
 	  cp5.getController("ligafx1").moveTo("Fx");
 	  cp5.getController("ligafx2").moveTo("Fx");
 	  cp5.getController("volfx1").moveTo("Fx");
@@ -361,6 +590,17 @@ public class LoopActivity extends PApplet {
 	  cp5.getController("recgeral1").moveTo("Rec");
 	  cp5.getController("play1").moveTo("Rec");
 	  cp5.getController("playvolume1").moveTo("Rec");
+	  cp5.getController("cliquerec").moveTo("Rec");
+	  cp5.getController("pararec").moveTo("Rec");
+	  cp5.getController("gravarrec").moveTo("Rec");
+	  cp5.getController("cliqueplay").moveTo("Rec");
+	  cp5.getController("paraplay").moveTo("Rec");
+	  cp5.getController("tocar").moveTo("Rec");
+	  cp5.getController("label").moveTo("ABOUT");
+	  cp5.getController("label2").moveTo("ABOUT");
+	  cp5.getController("label3").moveTo("ABOUT");
+	  cp5.getController("label4").moveTo("ABOUT");
+	  cp5.getController("label5").moveTo("ABOUT");
 //	  cp5.getController("Canal2").moveTo("Loops");
 //	  cp5.getController("Vol2").moveTo("Loops");
 //	  cp5.getController("Canal3").moveTo("Loops");
@@ -393,6 +633,13 @@ public class LoopActivity extends PApplet {
 
 	public void draw() {
 		background(255);
+		textSize(width*0.08f);
+		
+		  fill(0, 102, 153);
+		 
+		  text("Looper", width*.5f, height*0.1f); 
+		  textSize(width*0.02f);
+		  text("Música Móvel", width*0.75f, height*0.1f);
 	//loops	
 		float vol1 = cp5.getController("vol1").getValue();
 		PdBase.sendFloat("vol1", vol1);
