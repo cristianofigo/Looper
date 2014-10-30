@@ -101,7 +101,7 @@ public class LoopActivity extends PApplet {
 		
 		//definir icone e texto "sample"..etc..
 		pdService.startAudio(new Intent(this, LoopActivity.class),
-				R.drawable.ic_launcher, "Sample", "Return to Processing");
+				R.drawable.ic_launcher, "Looper", "Continuar Loopando");
 
 		dispatcher = new PdUiDispatcher();
 		PdBase.setReceiver(dispatcher);
